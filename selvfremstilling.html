@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>KVUC boilerplate</title>
+    <title>Selvfremstilling</title>
     <!-- http://www.robotstxt.org/meta.html -->
     <meta name="robots" content="noindex, nofollow" />
     <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
@@ -14,24 +14,47 @@
 
 <body>
     <div class="container-fluid">
-        <h1>Objektoverskrift (h1)</h1>
-        <h4>Instruktioner til kursisten: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam...</h4>
-        <h2>Underoverskrift (h2)</h2>
-        <h4 class="QuestionTask">Opgaveinstruks </h4>
-        <div class="col-xs-8">
-            <p>
-                Brødtekst (p): Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
+        <h1 id="header"> ... </h1>
+        <h4 class="instruktion"><span class="glyphicon glyphicon-arrow-right"></span><span id="subHeader"> ... </span></h4>
+
+        <div class="row">
+            <div id="DataInput"></div>
         </div>
-        <div class="col-xs-4">
-            <p>
-                Brødtekst (p): Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-            </p>
+
+        <div class="row">
+            <div class="PointFeedback">
+                <h5>Korrekte svar: <span class="QuestionCounter QuestionTask">0/0</span> Fejl: <span class="ErrorCount QuestionTask">0</span></h5>
+            </div>
         </div>
+
+        
+<!-- 
+        <span class="DropdownObj"><select class="Dropdown" id="Dropdown_0"><option value="" selected="" disabled="">Hvem er afsenderen?</option><option value="Afsender 1">Afsender 1</option><option value="Afsender 2">Afsender 2</option><option value="Afsender 3">Afsender 3</option><option value="Afsender 4">Afsender 4</option><option value="Afsender 5">Afsender 5</option></select> <span class="ErrMsg"></span> </span>
+ -->
     </div>
+
+
+<!-- Nedenstående SVG-billede er fra JAHAs rulletekster -->
+<!-- 
+    <svg version="1.1" class="arrows" id="arrow-down" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 48 48" xml:space="preserve" enable-background="new 0 0 48 48">
+        <g id="glyphicons">
+            <g id="circle-arrow-down">
+                <path d="M11.75 23.94c0 6.73 5.46 12.19 12.19 12.19s12.19-5.46 12.19-12.19S30.67 11.75 23.94 11.75 11.75 17.21 11.75 23.94zM25.5 18c0.28 0 0.5 0.23 0.5 0.5V24h3.5c0.28 0 0.35 0.17 0.18 0.38l-5.35 6.24c-0.18 0.21-0.47 0.21-0.65 0l-5.38-6.24C18.11 24.17 18.19 24 18.47 24H22v-5.5c0-0.28 0.23-0.5 0.5-0.5H25.5z"/>
+                </g>
+            </g>
+        <g id="Layer_2"/>
+    </svg>
+ -->
+
+
+
     <script src="../library/vendor_scripts.js"></script>
     <script src="../library/custom_scripts.js"></script>
     <script src="selvfremstilling.js"></script>
+    <script type="text/javascript">
+        // ReturnAjaxData("GET", "json/QuizData2.json", false, "json");     // En dropdown pr kollonne
+        ReturnAjaxData("GET", "json/QuizData.json", false, "json");        // En eller flere dropdown pr kollonne
+    </script>
     <script type="text/javascript">
     $(document).ready(function() {
         one_line_footer();
