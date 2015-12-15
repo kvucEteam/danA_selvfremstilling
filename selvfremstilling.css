@@ -17,6 +17,12 @@ h4 {
 */
 
 
+.glyphicons{
+	margin-left: 14px;
+	margin-bottom: 6px;
+}
+
+
 #btnContainer{
 	margin-bottom: 10px;
 }

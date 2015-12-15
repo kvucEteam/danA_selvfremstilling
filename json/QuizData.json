@@ -169,7 +169,7 @@
             }, {
                 "header": "ADRESSAT/MODTAGER",
                 "icon":{"alt": "Reaktion", "url": ""},
-                "glyphicon": "glyphicon glyphicon-user",
+                "glyphicon": "glyphicons glyphicons-family",
                 "correctAnswer": [5, 5],
                 "feedback": [
                     {
