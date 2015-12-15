@@ -1,7 +1,7 @@
 var jsonData = "<h1>OK</h1>";
 
 var NumOfQuestions = 0;
-var QuestionCounter = 0;
+var QuestionCounter = 0; // 21;  // <---- For testing endsenario.
 var ErrorCount = 0;
 
 
@@ -56,25 +56,6 @@ function ReturnAjaxData(Type, Url, Async, DataType) {
     });
 }
 
-
-// function returnSearchInterface(jsonData){
-//     var JDD = jsonData.DropDowns;
-//     var HTML = '<div id="DropDownInterface">';
-//     // HTML += '<input id="SearchText" type="text" placeholder="Skriv dine søgeord her..." /> <span class="ErrMsg"></span> <br/>';
-//     HTML += returnSourceItem(jsonData);
-//     for(var n in JDD){
-//         HTML += '<div class="DropdownContainer"> ';
-//             HTML += '<div class="DropdownIcon '+JDD[n].glyphicon+'"></div>';
-//             HTML += '<div class="DropdownHeader">'+JDD[n].header+'</div>';
-//             HTML += '<span class="DropdownObj">'+returnDropdownMarkup(JDD[n].obj)+' <span class="ErrMsg"></span> </span> ';
-//         HTML += '</div>';
-//         console.log("returnSearchInterface " + n);
-//     }
-//     HTML += '</div>';
-//     return HTML;
-// }
-
-
 function addCounterToJsonData(jsonData){
     console.log("\n\n jsonData 1: " + JSON.stringify(jsonData));
     var JDQ = jsonData.qustions;
@@ -105,23 +86,28 @@ function returnUserInterface(jsonData){
         HTML += '<div id="UserInterface_'+String(n)+'"class="UserInterface '+((n>0)?"hide":"")+'">';
         HTML += returnSourceItem(JDQ[n].sourceData);
         var JDQD = JDQ[n].DropDowns;
-        for(var k in JDQD){
-            HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-2"> ';
-                HTML += '<div class="DropdownIcon '+JDQD[k].glyphicon+'"></div>';
-                // HTML += JDQD[k].glyphicon;
-                HTML += '<div class="DropdownHeader">'+JDQD[k].header+'</div>';
-                HTML += '<span class="DropdownObj">'+returnDropdownMarkup( JDQD[k].obj[ JDQD[k].counter ] )+' <span class="ErrMsg"></span> </span> ';
-            HTML += '</div>';
-            console.log("returnSearchInterface " + n);
-        }
+        
+            for(var k in JDQD){
+                HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-2"> ';
+                    HTML += '<div class="DropdownIcon '+JDQD[k].glyphicon+'"></div>';
+                    // HTML += JDQD[k].glyphicon;
+                    HTML += '<div class="DropdownHeader">'+JDQD[k].header+'</div>';
+                    for(var q in JDQD[k].obj){
+                        // HTML += '<span class="DropdownObj">'+returnDropdownMarkup( JDQD[k].obj[ JDQD[k].counter ] )+' <span class="ErrMsg"></span> </span> ';
+                        HTML += '<div class="DropdownObj">'+returnDropdownMarkup( JDQD[k].obj[ q ] )+' <span class="ErrMsg"></span> </div> ';
+                    }
+                HTML += '</div>';
+                console.log("returnSearchInterface " + n);
+            }
+        
         HTML += '</div>';
     }
 
     // Rendering the comparative analysis (danish: "komparativ analyse")
     HTML += '<div id="comparativeAnalysis">';
-    HTML +=     '<h1 id="header_comparativeAnalysis">'+jsonData.endSenario.header+'</h1>';
-    HTML +=     '<h4 id="subHeader_comparativeAnalysis">'+jsonData.endSenario.subHeader+'</h4>';
-    HTML +=     '<h4 id="content_comparativeAnalysis">'+jsonData.endSenario.content+'</h4>';
+    // HTML +=     '<h2 id="header_comparativeAnalysis">'+jsonData.endSenario.header+'</h2>';         // Moved to event-listeners
+    // HTML +=     '<h4 id="subHeader_comparativeAnalysis">'+jsonData.endSenario.subHeader+'</h4>';   // Moved to event-listeners
+    HTML +=     returnCarouselHtml(jsonData);  // Insert carousel HTML
     HTML += '</div>';
     
     return HTML;
@@ -190,20 +176,145 @@ function giveFeedback(feedbackMsg, correctAnswer){
 }
 
 
+//=======================================================================================
+//                  Carousel code
+//=======================================================================================
+
+
+// The function makes the carousel-indicator for the carousel:
+function returnCarouselIndicators(jsonData){
+    var HTML = '';
+    // for (var i = 0; i < jsonData.endSenario.carousel.length; i++) {
+    for (var i in jsonData.endSenario.carousel) {
+        HTML += '<li data-target="#questionCarousel" data-slide-to="'+i+'"'+((i==0)?' class="active"':'')+'></li>';
+    };
+    console.log("returnCarouselIndicators: " + HTML);
+
+    return HTML;
+}
+// XXX = [{1:1},{2:2},{3:3},{4:4},{5:5}];
+// returnCarouselIndicators(XXX);
+
+
+function returnCarouselItem(questionNum, jsonData){
+    var itemData = jsonData.endSenario.carousel[questionNum];
+
+    // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
+    var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">';
+
+    switch(itemData.slideData.type) {
+        case "img":
+            HTML += '<img class="img-responsive" src="'+itemData.slideData.src+'" alt="'+itemData.slideData.alt+'"/>';
+            break;
+        case "text":
+            HTML += '<div class="TextHolder">'+itemData.slideData.text+'</div>';
+            break;
+        case "video":
+            HTML += '<div class="embed-responsive embed-responsive-16by9 col-xs-12 col-md-12">' + 
+                        '<iframe class="embed-responsive-item" src="'+itemData.slideData.src+'?rel=0" allowfullscreen="1"></iframe>' + 
+                    '</div>';
+            break;
+        default:
+            alert('Invalid "type"');
+    }
+
+    HTML += '</div>';
+    
+    console.log("returnCarouselItem: " + HTML);
+
+    return HTML;
+}
+
+
+function returnCarouselItem2(jsonData){
+    console.log("returnCarouselItem2 - jsonData: " + JSON.stringify(jsonData));
+    var slideData = jsonData.endSenario.carousel;
+    console.log("returnCarouselItem2 - slideData: " + slideData.length);
+
+    var HTML = '';
+
+    // for (var i in slideData){
+    for (var i = 0; i < slideData.length; i++) {
+        // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
+        HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
+
+        HTML += '<h3 class="analysisHeading">'+slideData[i].header+'</h3>';
+
+        for (var j in slideData[i].data) {
+            var l = slideData[i].data.length;
+            var bsColNum = ((l==1)?'12':((l==2)?'6':((l==3)?'4':'12'))); 
+            HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[i].data[j].analysis+'</div>';
+        }
+
+        // HTML += '<div class="clear"></div>';
+        
+        HTML += '</div>';
+    }
+    
+    console.log("returnCarouselItem2: " + HTML);
+
+    return HTML;
+}
+
+
+function returnCarouseList(jsonData){
+    var HTML = '';
+    for (n in jsonData){
+        HTML += returnCarouselItem2(n, jsonData);
+    }
+
+    console.log("returnCarouseList: " + HTML);
+    
+    return HTML;
+}
+
+
+function returnCarouselHtml(jsonData){
+    
+    var HTML = '';
+
+    console.log("ReturnQustionHtml - btnHtml: " + HTML);
+
+    HTML += '<div id="questionCarousel" class="carousel slide" data-ride="carousel" data-interval="false">' +
+                '<ol class="carousel-indicators">' +
+                    returnCarouselIndicators(jsonData) + 
+                '</ol>' +
+                '<div class="carousel-inner" role="listbox">' +
+                    // returnCarouseList(jsonData) + 
+                    returnCarouselItem2(jsonData) +
+                '</div>' +
+                '<a class="left carousel-control" href="#questionCarousel" role="button" data-slide="prev">' +
+                    '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +
+                    '<span class="sr-only">Previous</span>' +
+                '</a>' +
+                '<a class="right carousel-control" href="#questionCarousel" role="button" data-slide="next">' +
+                    '<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>' +
+                    '<span class="sr-only">Next</span>' +
+                '</a>' +
+            '</div>';
+    return HTML;
+}
+
+
+//=======================================================================================
+//                  Run code
+//=======================================================================================
+
 
 $(document).ready(function() {
-// $(window).load(function() {
 
     addCounterToJsonData(jsonData);
 
     for (var n in jsonData.qustions){
-        NumOfQuestions += jsonData.qustions[n].DropDowns.length;
+        var JDQD = jsonData.qustions[n].DropDowns
+        for (var m in JDQD){
+            NumOfQuestions +=  JDQDO = JDQD[m].obj.length;
+        }
     } 
     console.log("NumOfQuestions: " + NumOfQuestions);
 
     $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions); // Update the score counter
     
-    // $("#DataInput").html(returnSearchInterface(jsonData));  // Insert carousel HTML
     $("#DataInput").html(returnUserInterface(jsonData)); 
 
     $("#comparativeAnalysis").addClass("hide"); // Hide the comparative analysis
@@ -212,99 +323,40 @@ $(document).ready(function() {
 
     $("#header").html(jsonData.userInterface.header);   // Shows the initial heading.
     $("#subHeader").html(jsonData.userInterface.subHeader);    // Shows the initial subheading.
-
-    
-    // console.log("returnSearchInterface: " + returnSearchInterface(jsonData));
-
-    
-    // $('.Dropdown').on('change', function() {
+  
+    // Check of student answers:
     $( document ).on('change', '.Dropdown', function() {
         console.log("onChange event fired");
         console.log("onChange - $(this).id: " + $(this).prop("id"));
         var JDD = jsonData.DropDowns;
         var JDQ = jsonData.qustions;
-        // for (var n in JDD){
         for (var n in JDQ){
             var JDQD = JDQ[n].DropDowns;
             for(var k in JDQD){
-                if (JDQD[k].obj[ JDQD[k].counter ].id == $(this).prop("id")){  // Find the correct JSON dropdown object...
-                    console.log("onChange - JDD[n].header: " + JDQD[k].header);
-                    console.log("onChange - $(this).val()): " + $(this).val());
-                    if(JDQD[k].correctAnswer.length > 1){ // If there is MORE than one correct answer...
-                        // 
-                        // We might want MORE than one correct answer - this logic goes here...
-                        //
-                        // NOTER:
-                        //      - Anvend koden for eet korrekt svar som skabelon
-                        //      - Indsæt en for-loop for hver ".obj" JSON-dropdown-data. 
-                        //      - Anvend et ".anwsered = true" objekt i JSON-dataet for ".obj" JSON-dropdown-dat, for at afgøre om der er svaret korrekt på en dropdown.
-                        //      - KONVENTION: 
-                        //          + antallet af correctAnswer elementer i arrayet afgør antallet af dropdowns.
-                        //          + hvis der kun er een ".obj" JSON-dropdown-data, men flere correctAnswer elementer, så genbruges den ene ".obj" JSON-dropdown-data i alle dropdowns.
-                        //          + hvis der er flere ".obj" JSON-dropdown-data, så skal der være lige så mange correctAnswer elementer, og de bruges par vis.
-                        //
 
-                        console.log("onChange - correctAnswer");
+                for(var q in JDQD[k].correctAnswer){
 
-                        if (JDQD[k].obj.length > 1){
-                            console.log("onChange - OBJ 1");
-                        } else {
-                            console.log("onChange - OBJ 2");
+                    if (JDQD[k].obj[ q ].id == $(this).prop("id")){  // Find the correct JSON dropdown object...
+                        console.log("onChange - JDD[n].header: " + JDQD[k].header);
+                        console.log("onChange - $(this).val()): " + $(this).val());
 
-                            // if (JDQD[k].obj.options[JDQD[k].correctAnswer[0]].value == $(this).val()){  // The student gave the correct answer...
-                            //     console.log("onChange - CORRECT ANSWER");
-                            //     // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
-                            //     $(this).parent().html(JDQD[k].feedback[0].posetive); // Remove the dropdown and inset text to the student
-                            //     QuestionCounter += 1;
-                            //     $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions);
-                            //     if (QuestionCounter == NumOfQuestions){
-                            //         $(".btnEndSenario").removeClass("hide");
-                            //     }
-                            // } else {                    // The student gave the wrong answer...
-                            //     console.log("onChange - WRONG ANSWER");
-                            //     giveFeedback(JDQD[k].feedback[0].negative, false);
-                            //     ErrorCount += 1;
-                            //     $('.ErrorCount').text(ErrorCount);
-                            // }
-                        }
-
-                    } else { // If there is ONE correct answer...
-                        if (JDQD[k].obj[ JDQD[k].counter ].options[JDQD[k].correctAnswer[0]].value == $(this).val()){  // The student gave the correct answer...
-                            console.log("onChange - CORRECT ANSWER");
-                            // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
-                            $(this).parent().html(JDQD[k].feedback[0].posetive); // Remove the dropdown and inset text to the student
-                            QuestionCounter += 1;
-                            $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions);
-                            if (QuestionCounter == NumOfQuestions){
-                                $(".btnEndSenario").removeClass("hide");
+                        if (JDQD[k].obj[ q ].options[JDQD[k].correctAnswer[q]].value == $(this).val()){  // The student gave the correct answer...
+                                console.log("onChange - CORRECT ANSWER - n: " + n + ', k: ' + k + ', q: ' + q);
+                                // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
+                                $(this).parent().html(JDQD[k].feedback[q].posetive); // Remove the dropdown and inset text to the student
+                                QuestionCounter += 1;
+                                $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions);
+                                if (QuestionCounter == NumOfQuestions){
+                                    $(".btnEndSenario").removeClass("hide");
+                                }
+                            } else {                    // The student gave the wrong answer...
+                                console.log("onChange - WRONG ANSWER");
+                                giveFeedback(JDQD[k].feedback[q].negative, false);
+                                ErrorCount += 1;
+                                $('.ErrorCount').text(ErrorCount);
                             }
-                        } else {                    // The student gave the wrong answer...
-                            console.log("onChange - WRONG ANSWER");
-                            giveFeedback(JDQD[k].feedback[0].negative, false);
-                            ErrorCount += 1;
-                            $('.ErrorCount').text(ErrorCount);
-                        }
+
                     }
-
-
-                    // // TEST:
-                    // if (JDQD[k].obj[ JDQD[k].counter ].options[JDQD[k].correctAnswer[0]].value == $(this).val()){  // The student gave the correct answer...
-                    //         console.log("onChange - CORRECT ANSWER");
-                    //         // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
-                    //         $(this).parent().html(JDQD[k].feedback[0].posetive); // Remove the dropdown and inset text to the student
-                    //         QuestionCounter += 1;
-                    //         $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions);
-                    //         if (QuestionCounter == NumOfQuestions){
-                    //             $(".btnEndSenario").removeClass("hide");
-                    //         }
-                    //     } else {                    // The student gave the wrong answer...
-                    //         console.log("onChange - WRONG ANSWER");
-                    //         giveFeedback(JDQD[k].feedback[0].negative, false);
-                    //         ErrorCount += 1;
-                    //         $('.ErrorCount').text(ErrorCount);
-                    //     }
-
-
 
                 }
             }
@@ -313,6 +365,12 @@ $(document).ready(function() {
 
 
     $( document ).on('click', ".btnCase", function(event){
+
+        $("#header").html(jsonData.userInterface.header);   // Shows the initial heading.
+        $("#subHeader").html(jsonData.userInterface.subHeader);    // Shows the initial subheading.
+
+        $(".PointFeedback").removeClass("hide");
+
         var index = $(".btnCase").index( this );
         console.log("onClick - index: " + index);
         $(".btnEndSenario").removeClass("btn-primary").addClass("btn-info");
@@ -329,22 +387,19 @@ $(document).ready(function() {
     $( document ).on('click', ".btnEndSenario", function(event){
         // UserMsgBox("body", jsonData.endSenario.feedback);
 
+        $("#header").html(jsonData.endSenario.header);   // Shows the comparative analysis heading.
+        $("#subHeader").html(jsonData.endSenario.subHeader);    // Shows the comparative analysisHeading subheading.
+
+        $(".PointFeedback").addClass("hide");
         $(".UserInterface").addClass("hide");
-        $("#comparativeAnalysis").removeClass("hide"); // Hide the comparative analysis
+        $("#comparativeAnalysis").removeClass("hide"); // Unhide the comparative analysis.
         
         $(".btnCase").removeClass("btn-primary").addClass("btn-info");
         $(this).addClass("btn-primary").removeClass("btn-info");
 
-        $("#header_comparativeAnalysis").html(jsonData.userInterface.header);   // Shows the initial heading.
-        $("#subHeader_comparativeAnalysis").html(jsonData.userInterface.subHeader);    // Shows the initial subheading.
-        $("#content_comparativeAnalysis").html(jsonData.userInterface.header);   // Shows the initial heading.
+        $("#header_comparativeAnalysis").html(jsonData.endSenario.header);   // Shows the initial heading.
+        $("#subHeader_comparativeAnalysis").html(jsonData.endSenario.subHeader);    // Shows the initial subheading.
+        $("#content_comparativeAnalysis").html(jsonData.endSenario.content);   // Shows the initial heading.
     });
-
-
-    ///////////////////////////////////////////////////
-
-
-    // $("#id_description_iframe").contents().find("body").html()
-
 
 });

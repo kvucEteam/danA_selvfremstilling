@@ -48,3 +48,61 @@ h4 {
 .PointFeedback{
 	margin-top: 20px;
 }
+
+.textLeft{
+	/*float: left;*/
+}
+
+.textRight{
+	/*float: right;*/
+}
+
+.clear{
+	/*clear: both;*/
+}
+
+.column{
+	margin-bottom: 15px;
+}
+
+/***************************    carousel styling   *******************************/
+
+.analysisHeading{
+	text-align: center;
+}
+
+.slide{
+	padding-left: 60px;
+	padding-right: 60px;
+}
+
+.carousel{
+	border-radius: 8px;
+	background-color: #FFF;
+}
+.carousel .carousel-indicators{
+	bottom: -5px;
+}
+.carousel .carousel-indicators li{
+	border: 1px solid #000;
+}
+.carousel .carousel-indicators .active{
+	background-color: #000;
+}
+.carousel .left, .carousel .right{
+	background-image: none;
+	color: #000;
+}
+.carousel .carousel-control{
+	opacity: 0.7;
+}
+.carousel .carousel-control:hover{
+	opacity: 1;
+}
+.carousel .TextHolder{
+	margin-bottom: 20px;
+}
+
+.carousel-control{
+	width: 7%;
+}
