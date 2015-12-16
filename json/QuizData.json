@@ -461,7 +461,7 @@
             }]
         }],
     "endSenario": {
-        "btnText" : "Komparativ analyse",
+        "btnText" : "KOMPARATIV ANALYSE",
         "header" : "Komparativ analyse",
         "subHeader": "Instruktioner til kursisten ang. komparativ analyse: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam... ",
         "carousel": [
