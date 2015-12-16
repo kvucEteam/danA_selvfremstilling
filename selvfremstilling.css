@@ -17,6 +17,11 @@ h4 {
 */
 
 
+.score_container {
+	position: inherit;
+	display: inline-block;
+}
+
 .glyphicons{
 	margin-left: 14px;
 	margin-bottom: 6px;
@@ -121,3 +126,5 @@ h4 {
 .carousel-control{
 	width: 7%;
 }
+
+

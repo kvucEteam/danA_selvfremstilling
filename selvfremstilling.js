@@ -313,7 +313,7 @@ $(document).ready(function() {
     } 
     console.log("NumOfQuestions: " + NumOfQuestions);
 
-    $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions); // Update the score counter
+    $('.QuestionCounter').text(QuestionCounter+' ud af '+NumOfQuestions); // Update the score counter
     
     $("#DataInput").html(returnUserInterface(jsonData)); 
 
@@ -345,7 +345,7 @@ $(document).ready(function() {
                                 // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
                                 $(this).parent().html(JDQD[k].feedback[q].posetive); // Remove the dropdown and inset text to the student
                                 QuestionCounter += 1;
-                                $('.QuestionCounter').text(QuestionCounter+'/'+NumOfQuestions);
+                                $('.QuestionCounter').text(QuestionCounter+' ud af '+NumOfQuestions);
                                 if (QuestionCounter == NumOfQuestions){
                                     $(".btnEndSenario").removeClass("hide");
                                 }
