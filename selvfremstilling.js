@@ -78,13 +78,17 @@ function returnUserInterface(jsonData){
     for (var n in JDQ){
         HTML += '<span class="btnCase btn btn-'+((n==0)?"primary":"info")+'">'+JDQ[n].name+'</span>';
     }
-        HTML += '<span class="btnEndSenario btn btn-info hide">'+jsonData.endSenario.btnText+'</span>';
+        // HTML += '<span class="btnEndSenario btn btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
+        HTML += '<span class="btnEndSenario btn btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
     HTML += '</div>';
     
     // Rendering the case-senarios for the usrinterface
     for(var n in JDQ){
         HTML += '<div id="UserInterface_'+String(n)+'"class="UserInterface '+((n>0)?"hide":"")+'">';
-        HTML += returnSourceItem(JDQ[n].sourceData);
+        HTML +=     '<div class="row">';
+        HTML +=         returnSourceItem(JDQ[n].sourceData);
+        HTML +=     '</div>';
+        HTML +=     '<div class="row">';
         var JDQD = JDQ[n].DropDowns;
         
             for(var k in JDQD){
@@ -99,7 +103,7 @@ function returnUserInterface(jsonData){
                 HTML += '</div>';
                 console.log("returnSearchInterface " + n);
             }
-        
+        HTML +=     '</div>';
         HTML += '</div>';
     }
 
@@ -135,14 +139,21 @@ function returnSourceItem(JDQS){
     switch(JDQS.type) {
         case "img":
             // HTML += '<div class="SourceWrapper" data-toggle="modal" data-target="#myModal"> <img class="img-responsive SourceImg" src="'+itemData.kildeData.src+'" alt="'+itemData.kildeData.alt+'"/> </div>';
-            HTML += '<div class="ImgHolder SourceWrapper col-xs-12 col-md-12"> <img class="img-responsive SourceImg" src="'+JDQS.src+'" alt="'+JDQS.alt+'"/> </div>';
+            HTML += '<div class="ImgHolder SourceWrapper col-xs-12 col-md-8"> <img class="img-responsive SourceImg" src="'+JDQS.src+'" alt="'+JDQS.alt+'"/> </div>';
             break;
         case "text":
-            HTML += '<div class="TextHolder SourceWrapper col-xs-12 col-md-12">'+JDQS.text+'</div>';
+            HTML += '<div class="TextHolder SourceWrapper col-xs-12 col-md-8">'+JDQS.text+'</div>';
             break;
         case "video":
-            HTML += '<div class="VidHolder SourceWrapper embed-responsive embed-responsive-16by9 col-xs-12 col-md-12">' + 
-                        '<iframe class="embed-responsive-item" src="'+JDQS.src+'?rel=0" allowfullscreen="1"></iframe>' + 
+            HTML += '<div class=" col-xs-12 col-md-8">' +
+                        '<div class="VidHolder SourceWrapper embed-responsive embed-responsive-16by9">' +
+                                '<iframe class="embed-responsive-item" src="'+JDQS.src+'?rel=0" allowfullscreen="1"></iframe>' + 
+                        '</div>' +
+                    '</div>';
+            break;
+        case "html":
+            HTML += '<div class="htmlHolder SourceWrapper col-xs-12 col-md-8">' + 
+                        JDQS.html + 
                     '</div>';
             break;
         default:
@@ -196,35 +207,6 @@ function returnCarouselIndicators(jsonData){
 // returnCarouselIndicators(XXX);
 
 
-function returnCarouselItem(questionNum, jsonData){
-    var itemData = jsonData.endSenario.carousel[questionNum];
-
-    // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
-    var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">';
-
-    switch(itemData.slideData.type) {
-        case "img":
-            HTML += '<img class="img-responsive" src="'+itemData.slideData.src+'" alt="'+itemData.slideData.alt+'"/>';
-            break;
-        case "text":
-            HTML += '<div class="TextHolder">'+itemData.slideData.text+'</div>';
-            break;
-        case "video":
-            HTML += '<div class="embed-responsive embed-responsive-16by9 col-xs-12 col-md-12">' + 
-                        '<iframe class="embed-responsive-item" src="'+itemData.slideData.src+'?rel=0" allowfullscreen="1"></iframe>' + 
-                    '</div>';
-            break;
-        default:
-            alert('Invalid "type"');
-    }
-
-    HTML += '</div>';
-    
-    console.log("returnCarouselItem: " + HTML);
-
-    return HTML;
-}
-
 
 function returnCarouselItem2(jsonData){
     console.log("returnCarouselItem2 - jsonData: " + JSON.stringify(jsonData));
@@ -257,6 +239,93 @@ function returnCarouselItem2(jsonData){
 }
 
 
+// function returnCarouselItem3(jsonData){
+function returnCarouselSlide(jsonData){
+    console.log("returnCarouselItem2 - jsonData: " + JSON.stringify(jsonData));
+    var slideData = jsonData.endSenario.carousel;
+    console.log("returnCarouselItem2 - slideData: " + slideData.length);
+
+    var HTML = '';
+
+    // for (var i in slideData){
+    for (var i = 0; i < slideData.length; i++) {
+        // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
+        HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
+
+        HTML += '<h3 class="analysisHeading">'+slideData[i].header+'</h3>';
+
+        // for (var j in slideData[i].data) {
+        //     // var l = slideData[i].data.length;
+        //     // var bsColNum = ((l==1)?'12':((l==2)?'6':((l==3)?'4':'12'))); 
+        //     // HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[i].data[j].analysis+'</div>';
+        //     HTML += returnCarouselItem(j, slideData);
+        // }
+
+        HTML += returnCarouselItem(i, slideData);
+
+        // HTML += '<div class="clear"></div>';
+        
+        HTML += '</div>';
+    }
+    
+    console.log("returnCarouselItem2: " + HTML);
+
+    return HTML;
+}
+
+//==============================================================================
+//          Datatypes for text, images and video
+//==============================================================================
+// {
+//     "type": "img",
+//     "src": "img/06_Elna_Statistisk_aarbog_1920_side_27_js.jpg",
+//     "alt": "Lokalt billede..."
+// }, {
+//     "type": "text",
+//     "text": "Mødeindkaldelse ledsaget af artikel skrevet af Louis Pio..."
+// }, {
+//     "type": "video",
+//     "src": "https://player.vimeo.com/video/129639593"
+// }
+function returnCarouselItem(slideNum, slideData){
+    // var itemData = jsonData.endSenario.carousel[slideNum];
+
+    // var HTML = '<div id="question_'+slideNum+'" class="item'+((slideNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
+    var HTML = '<div id="question_'+slideNum+'" class="item'+((slideNum==0)?' active':'')+'">';
+
+    switch(slideData[slideNum].type) {
+        case "img":
+            HTML += '<img class="img-responsive" src="'+slideData[slideNum].src+'" alt="'+slideData[slideNum].alt+'"/>';
+            break;
+        case "text":
+            HTML += '<div class="TextHolder">'+slideData[slideNum].text+'</div>';
+            break;
+        case "video":
+            HTML += '<div class="embed-responsive embed-responsive-16by9 col-xs-12 col-md-12">' + 
+                        '<iframe class="embed-responsive-item" src="'+slideData[slideNum].src+'?rel=0" allowfullscreen="1"></iframe>' + 
+                    '</div>';
+            break;
+        case "columnData":
+            console.log("SLIDE TEST 1");
+            for (var j in slideData[slideNum].columnData) {
+                console.log("SLIDE TEST 2");
+                var l = slideData[slideNum].columnData.length;
+                var bsColNum = ((l==1)?'12':((l==2)?'6':((l==3)?'4':'12'))); 
+                HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[slideNum].columnData[j].analysis+'</div>';
+            }
+            break;
+        default:
+            alert('Invalid "type"');
+    }
+
+    HTML += '</div>';
+    
+    console.log("returnCarouselItem: " + HTML);
+
+    return HTML;
+}
+
+
 function returnCarouseList(jsonData){
     var HTML = '';
     for (n in jsonData){
@@ -280,8 +349,8 @@ function returnCarouselHtml(jsonData){
                     returnCarouselIndicators(jsonData) + 
                 '</ol>' +
                 '<div class="carousel-inner" role="listbox">' +
-                    // returnCarouseList(jsonData) + 
-                    returnCarouselItem2(jsonData) +
+                    // returnCarouselItem2(jsonData) +
+                    returnCarouselSlide(jsonData) + 
                 '</div>' +
                 '<a class="left carousel-control" href="#questionCarousel" role="button" data-slide="prev">' +
                     '<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>' +

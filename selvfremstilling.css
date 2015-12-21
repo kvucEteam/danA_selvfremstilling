@@ -16,10 +16,20 @@ h4 {
 }
 */
 
+.row {
+	margin-left: 0px;
+}
+
+.col-xs-12, .col-md-8 {
+	/*padding-left: 0px;
+	padding-right: 15px;*/
+}
+
 
 .score_container {
 	position: inherit;
 	display: inline-block;
+	margin-left: 15px;
 }
 
 .glyphicons{
@@ -37,6 +47,7 @@ h4 {
 .DropdownContainer{
 	display: inline-block;
 	/*margin-right: 10px;*/
+	padding-left: 10px;
 }
 
 .DropdownContainer .glyphicons{
@@ -77,6 +88,53 @@ h4 {
 
 .column{
 	margin-bottom: 15px;
+}
+
+select {  /*Fixes the "overflow" of the selects*/
+	width: 100%;
+}
+
+.htmlHolder{
+	margin-left: 15px;
+	margin-right: 15px;
+
+	padding-left: 0px;
+	padding-right: 30px;
+}
+
+.VidHolder{
+	padding-left: 0px;
+	padding-right: 30px;
+}
+
+
+
+.item {
+	min-height: 200px;
+}
+
+#slide_0 {
+	background-color: #64e2dc;
+}
+
+#slide_1 {
+	background-color: #e26060;
+}
+
+#slide_2 {
+	background-color: #9090d1;
+}
+
+#slide_3 {
+	background-color: #73f9a9;
+}
+
+#slide_4 {
+	background-color: #e5c180;
+}
+
+#slide_5 {
+	background-color: #f9f206;
 }
 
 /***************************    carousel styling   *******************************/
