@@ -30,6 +30,7 @@ h4 {
 	position: inherit;
 	display: inline-block;
 	margin-left: 15px;
+	max-width: 350px; /*Overwrite 300px from styles.css*/
 }
 
 .glyphicons{
@@ -87,7 +88,8 @@ h4 {
 }
 
 .column{
-	margin-bottom: 15px;
+	/*margin-bottom: 40px;*/
+	padding-bottom: 40px;
 }
 
 select {  /*Fixes the "overflow" of the selects*/
@@ -110,41 +112,45 @@ select {  /*Fixes the "overflow" of the selects*/
 
 
 .item {
-	min-height: 200px;
+	height: 100%;
 }
 
-#slide_0 {
-	background-color: #64e2dc;
+
+#slide_0, #slide_0 .column {
+	background-color: #FFFF99;
 }
 
-#slide_1 {
-	background-color: #e26060;
+#slide_1, #slide_1 .column {
+	background-color: #ACEFED;
 }
 
-#slide_2 {
-	background-color: #9090d1;
+#slide_2, #slide_2 .column {
+	background-color: #B5F8D5;
 }
 
-#slide_3 {
-	background-color: #73f9a9;
+#slide_3, #slide_3 .column {
+	background-color: #F2B9E1;
 }
 
-#slide_4 {
-	background-color: #e5c180;
+#slide_4, #slide_4 .column {
+	background-color: #D2D4EC;
 }
 
-#slide_5 {
-	background-color: #f9f206;
-}
 
 /***************************    carousel styling   *******************************/
 
 #comparativeAnalysis{
 	margin-left: 15px;
+	/*background-color: #f00;*/
 }
 
-.analysisHeading{
-	text-align: center;
+#questionCarousel{
+	background-color: #f8f8f6;
+}
+
+.columnHeading{
+	margin-left: 15px;
+	padding-top: 10px;
 }
 
 .slide{

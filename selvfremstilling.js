@@ -220,7 +220,7 @@ function returnCarouselItem2(jsonData){
         // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
         HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
 
-        HTML += '<h3 class="analysisHeading">'+slideData[i].header+'</h3>';
+        HTML += '<h3 class="columnHeading">'+slideData[i].header+'</h3>';
 
         for (var j in slideData[i].data) {
             var l = slideData[i].data.length;
@@ -252,7 +252,7 @@ function returnCarouselSlide(jsonData){
         // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
         HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
 
-        HTML += '<h3 class="analysisHeading">'+slideData[i].header+'</h3>';
+        HTML += '<h3 class="columnHeading">'+slideData[i].header+'</h3>';
 
         // for (var j in slideData[i].data) {
         //     // var l = slideData[i].data.length;
@@ -287,6 +287,21 @@ function returnCarouselSlide(jsonData){
 //     "type": "video",
 //     "src": "https://player.vimeo.com/video/129639593"
 // }
+// {   
+//     "type" : "columnData",
+//     "columnData": [
+//         {"column":"<b>CASE 1</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"}
+//     ]
+// }
+// {   
+//     "type" : "columnData",
+//     "columnData": [          <-----------------  It takes 1 to N columns: columns 1 to 3 gets their own columns, 4 columns and up stacks in one column.
+//         {"column":"<b>CASE 1</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"},
+//         {"column":"<b>CASE 2</b><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>"}
+//     ]
+// }
 function returnCarouselItem(slideNum, slideData){
     // var itemData = jsonData.endSenario.carousel[slideNum];
 
@@ -311,7 +326,7 @@ function returnCarouselItem(slideNum, slideData){
                 console.log("SLIDE TEST 2");
                 var l = slideData[slideNum].columnData.length;
                 var bsColNum = ((l==1)?'12':((l==2)?'6':((l==3)?'4':'12'))); 
-                HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[slideNum].columnData[j].analysis+'</div>';
+                HTML += '<div class="analysis column col-xs-12 col-md-'+bsColNum+'">'+slideData[slideNum].columnData[j].column+'</div>';
             }
             break;
         default:
@@ -365,6 +380,49 @@ function returnCarouselHtml(jsonData){
 }
 
 
+function giveCaseFeedback(caseNum){
+
+    console.log("giveCaseFeedback - test");
+   
+    if (typeof caseCount === 'undefined') {
+        window.caseCount = {};
+        for (var n in jsonData.qustions){
+            caseCount[n] = false;  // Each case is set to false, to indicate that the student has not answered all questions/dropdowns in the case.
+        }
+    }
+
+    if ($("#UserInterface_"+String(caseNum)+" select").length == 0) {
+        caseCount[caseNum] = true;  // All questions/dropdowns has been answered, the caseCount for the caseNum is set to true.
+
+        var count = 0;
+        var caseStr = '';
+        for (t in caseCount){  // Count the number of unanswered all questions/dropdowns
+            if (!caseCount[t]){
+                ++count;
+            }
+        }
+        console.log("giveCaseFeedback - count a:" + count);
+        if (count > 0){
+            caseStr += 'CASE ';
+            for (var t in caseCount){
+                if (!caseCount[t]){ 
+                    --count;
+                    caseStr += String(parseInt(t)+1)+((count>=2)?', ':((count==1)?' eller ':''));
+                }  
+            }
+        } else {
+            caseStr += "KOMPARATIV ANALYSE";
+        }
+
+        var HTML = "";
+        HTML += '<h3>Flot - du er færdig med case '+String(parseInt(caseNum)+1)+' </h3>';
+        HTML += '<span class="btn btn-lg btn-info GoOn">GÅ TIL '+caseStr+'</span>';
+
+        UserMsgBox("body", HTML);
+    }
+}
+
+
 //=======================================================================================
 //                  Run code
 //=======================================================================================
@@ -410,20 +468,23 @@ $(document).ready(function() {
                         console.log("onChange - $(this).val()): " + $(this).val());
 
                         if (JDQD[k].obj[ q ].options[JDQD[k].correctAnswer[q]].value == $(this).val()){  // The student gave the correct answer...
-                                console.log("onChange - CORRECT ANSWER - n: " + n + ', k: ' + k + ', q: ' + q);
-                                // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
-                                $(this).parent().html(JDQD[k].feedback[q].posetive); // Remove the dropdown and inset text to the student
-                                QuestionCounter += 1;
-                                $('.QuestionCounter').text(QuestionCounter+' ud af '+NumOfQuestions);
-                                if (QuestionCounter == NumOfQuestions){
-                                    $(".btnEndSenario").removeClass("hide");
-                                }
-                            } else {                    // The student gave the wrong answer...
-                                console.log("onChange - WRONG ANSWER");
-                                giveFeedback(JDQD[k].feedback[q].negative, false);
-                                ErrorCount += 1;
-                                $('.ErrorCount').text(ErrorCount);
+                            console.log("onChange - CORRECT ANSWER - n: " + n + ', k: ' + k + ', q: ' + q);
+                            // giveFeedback(JDQD[k].feedback[0].posetive, true);  // TLY does not want this...
+                            $(this).parent().html(JDQD[k].feedback[q].posetive); // Remove the dropdown and inset text to the student
+                            QuestionCounter += 1;
+                            $('.QuestionCounter').text(QuestionCounter+' ud af '+NumOfQuestions);
+                            if (QuestionCounter == NumOfQuestions){
+                                $(".btnEndSenario").removeClass("hide");
                             }
+
+                            giveCaseFeedback(n);
+
+                        } else {                    // The student gave the wrong answer...
+                            console.log("onChange - WRONG ANSWER");
+                            giveFeedback(JDQD[k].feedback[q].negative, false);
+                            ErrorCount += 1;
+                            $('.ErrorCount').text(ErrorCount);
+                        }
 
                     }
 
@@ -457,7 +518,7 @@ $(document).ready(function() {
         // UserMsgBox("body", jsonData.endSenario.feedback);
 
         $("#header").html(jsonData.endSenario.header);   // Shows the comparative analysis heading.
-        $("#subHeader").html(jsonData.endSenario.subHeader);    // Shows the comparative analysisHeading subheading.
+        $("#subHeader").html(jsonData.endSenario.subHeader);    // Shows the comparative columnHeading subheading.
 
         $(".PointFeedback").addClass("hide");
         $(".UserInterface").addClass("hide");
@@ -469,6 +530,15 @@ $(document).ready(function() {
         $("#header_comparativeAnalysis").html(jsonData.endSenario.header);   // Shows the initial heading.
         $("#subHeader_comparativeAnalysis").html(jsonData.endSenario.subHeader);    // Shows the initial subheading.
         $("#content_comparativeAnalysis").html(jsonData.endSenario.content);   // Shows the initial heading.
+    });
+
+
+    $( document ).on('click', ".left", function(event){
+        console.log("LEFT - PRESSED");
+    });
+
+    $( document ).on('click', ".right", function(event){
+        console.log("RIGHT - PRESSED");
     });
 
 });
