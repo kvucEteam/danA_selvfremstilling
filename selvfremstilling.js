@@ -359,7 +359,7 @@ function returnCarouselHtml(jsonData){
 
     console.log("ReturnQustionHtml - btnHtml: " + HTML);
 
-    HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-6" data-ride="carousel" data-interval="false">' +
+    HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-8" data-ride="carousel" data-interval="false">' +
                 '<ol class="carousel-indicators">' +
                     returnCarouselIndicators(jsonData) + 
                 '</ol>' +

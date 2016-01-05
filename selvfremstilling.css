@@ -167,8 +167,12 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .slide{
-	padding-left: 60px;
-	padding-right: 60px;
+
+	padding-left: 40px;
+	padding-right: 40px;
+
+	/*padding-left: 6%;
+	padding-right: 6%;*/
 }
 
 .carousel{
@@ -199,7 +203,8 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .carousel-control{
-	width: 7%;
+	/*width: 7%;*/
+	width: 30px;
 }
 
 .carousel-control .glyphicon{
