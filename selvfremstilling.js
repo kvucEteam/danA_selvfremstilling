@@ -108,7 +108,7 @@ function returnUserInterface(jsonData){
     }
 
     // Rendering the comparative analysis (danish: "komparativ analyse")
-    HTML += '<div id="comparativeAnalysis">';
+    HTML += '<div id="comparativeAnalysis" class="row">';  //  col-xs-12 col-md-6  <--- Virker ikke!!!
     // HTML +=     '<h2 id="header_comparativeAnalysis">'+jsonData.endSenario.header+'</h2>';         // Moved to event-listeners
     // HTML +=     '<h4 id="subHeader_comparativeAnalysis">'+jsonData.endSenario.subHeader+'</h4>';   // Moved to event-listeners
     HTML +=     returnCarouselHtml(jsonData);  // Insert carousel HTML
@@ -359,7 +359,7 @@ function returnCarouselHtml(jsonData){
 
     console.log("ReturnQustionHtml - btnHtml: " + HTML);
 
-    HTML += '<div id="questionCarousel" class="carousel slide" data-ride="carousel" data-interval="false">' +
+    HTML += '<div id="questionCarousel" class="carousel slide col-xs-12 col-md-6" data-ride="carousel" data-interval="false">' +
                 '<ol class="carousel-indicators">' +
                     returnCarouselIndicators(jsonData) + 
                 '</ol>' +

@@ -45,6 +45,10 @@ h4 {
 	clear: both;  /* Fixes the problem of flowing left of H4.instruktion */ 
 }
 
+#btnContainer .btn{
+	margin-bottom: 10px;
+}
+
 .DropdownContainer{
 	display: inline-block;
 	/*margin-right: 10px;*/
@@ -87,9 +91,13 @@ h4 {
 	/*clear: both;*/
 }
 
-.column{
+.TextHolder{
 	/*margin-bottom: 40px;*/
 	padding-bottom: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+	/*max-height: 200px;
+	overflow: auto;*/
 }
 
 select {  /*Fixes the "overflow" of the selects*/
@@ -117,19 +125,19 @@ select {  /*Fixes the "overflow" of the selects*/
 
 
 #slide_0, #slide_0 .column {
-	background-color: #FFFF99;
-}
-
-#slide_1, #slide_1 .column {
 	background-color: #ACEFED;
 }
 
-#slide_2, #slide_2 .column {
+#slide_1, #slide_1 .column {
 	background-color: #B5F8D5;
 }
 
-#slide_3, #slide_3 .column {
+#slide_2, #slide_2 .column {
 	background-color: #F2B9E1;
+}
+
+#slide_3, #slide_3 .column {
+	background-color: #FFFF99;
 }
 
 #slide_4, #slide_4 .column {
@@ -138,6 +146,11 @@ select {  /*Fixes the "overflow" of the selects*/
 
 
 /***************************    carousel styling   *******************************/
+
+.carousel-inner{
+	border-radius: 6px;
+	/*padding: 30px 30px 40px 15px;*/
+}
 
 #comparativeAnalysis{
 	margin-left: 15px;
@@ -149,8 +162,8 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .columnHeading{
-	margin-left: 15px;
-	padding-top: 10px;
+	margin-left: 40px;
+	padding-top: 40px; /* 40px afstand */
 }
 
 .slide{
@@ -182,11 +195,15 @@ select {  /*Fixes the "overflow" of the selects*/
 	opacity: 1;
 }
 .carousel .TextHolder{
-	margin-bottom: 20px;
+	/*margin-bottom: 20px;*/
 }
 
 .carousel-control{
 	width: 7%;
+}
+
+.carousel-control .glyphicon{
+	font-size: 30px;
 }
 
 
