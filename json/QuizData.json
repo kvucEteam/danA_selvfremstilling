@@ -147,14 +147,24 @@
                 "correctAnswer": [1, 1],
                 "feedback": [
                     {
-                        "posetive": "<b>Modtager</b> <p>Dansk Folkepartis vælgere.</p>", 
-                        "negative": "Det rigtige svar er, at modtagerne er Dansk Folkepartis vælgere."
-                    },{
                         "posetive": "<b>Adressat</b> <p>Meddelelsen er adresseret til partiets medlemmer, som følger partiet på de sociale medier..</p>", 
                         "negative": "Det rigtige svar er, at meddelelsen er adresseret til partiets medlemmer, som følger partiet på de sociale medier."
+                    }, {
+                        "posetive": "<b>Modtager</b> <p>Dansk Folkepartis vælgere.</p>", 
+                        "negative": "Det rigtige svar er, at modtagerne er Dansk Folkepartis vælgere."
                     }
                 ],
                 "obj": [{
+                    "id": "Dropdown_4b",
+                    "class": "Dropdown",
+                    "selected": "0",
+                    "options": [
+                        {"value": "Hvem er adressaten?"}, 
+                        {"value": "Medlemmer af Dansk Folkeparti"}, 
+                        {"value": "Den brede offentlighed"}, 
+                        {"value": "Politiske kommentatorer"}
+                    ]
+                }, {
                     "id": "Dropdown_4a",
                     "class": "Dropdown",
                     "selected": "0",
@@ -165,16 +175,6 @@
                         {"value": "Regeringen"}, 
                         {"value": "Kristian Thulesen Dahl egen familie"}, 
                         {"value": "Dansk Folkepartis politiske modstandere"}
-                    ]
-                },{
-                    "id": "Dropdown_4b",
-                    "class": "Dropdown",
-                    "selected": "0",
-                    "options": [
-                        {"value": "Hvem er adressaten?"}, 
-                        {"value": "Medlemmer af Dansk Folkeparti"}, 
-                        {"value": "Den brede offentlighed"}, 
-                        {"value": "Politiske kommentatorer"}
                     ]
                 }]
             }, {
@@ -345,29 +345,17 @@
                 "header": "ADRESSAT/MODTAGER",
                 "icon":{"alt": "Reaktion", "url": ""},
                 "glyphicon": "glyphicons glyphicons-family",
-                "correctAnswer": [4, 1],
+                "correctAnswer": [1, 4],
                 "feedback": [
                     {
-                        "posetive": "<b>Modtager</b> <p>Modtagerne er vælgerne i det vestlige Jylland og resten af danmark.</p>", 
-                        "negative": "Det rigtige svar er at modtagerne er vælgerne i det vestlige Jylland og resten af Danmark."
-                    },{
                         "posetive": "<b>Adressat</b> <p>Mogens Jensen adresserer sin video til vælgerne i Vestjylland.</p>", 
                         "negative": "Det rigtige svar er, at Mogens Jensen adresserer sin video til vælgerne i Vestjylland."
+                    },{
+                        "posetive": "<b>Modtager</b> <p>Modtagerne er vælgerne i det vestlige Jylland og resten af danmark.</p>", 
+                        "negative": "Det rigtige svar er at modtagerne er vælgerne i det vestlige Jylland og resten af Danmark."
                     }
                 ],
                 "obj": [{
-                    "id": "Dropdown_10a",
-                    "class": "Dropdown",
-                    "selected": "0",
-                    "options": [
-                        {"value": "Hvem er modtageren(e)?"}, 
-                        {"value": "De danske vælgere"}, 
-                        {"value": "De andre politiske partier på Christiansborg"}, 
-                        {"value": "Udenlandske virksomheder"}, 
-                        {"value": "Vælgerne i det vestlige Jylland og resten af Danmark"}, 
-                        {"value": "Vælgere i hele Europa"}
-                    ]
-                },{
                     "id": "Dropdown_10b",
                     "class": "Dropdown",
                     "selected": "0",
@@ -377,6 +365,18 @@
                         {"value": "Udenlandske virksomheder"}, 
                         {"value": "Vælgere fra den modsatte politiske fløj"}, 
                         {"value": "Danske virksomhedsejere"}, 
+                        {"value": "Vælgere i hele Europa"}
+                    ]
+                },{
+                    "id": "Dropdown_10a",
+                    "class": "Dropdown",
+                    "selected": "0",
+                    "options": [
+                        {"value": "Hvem er modtageren(e)?"}, 
+                        {"value": "De danske vælgere"}, 
+                        {"value": "De andre politiske partier på Christiansborg"}, 
+                        {"value": "Udenlandske virksomheder"}, 
+                        {"value": "Vælgerne i det vestlige Jylland og resten af Danmark"}, 
                         {"value": "Vælgere i hele Europa"}
                     ]
                 }]
