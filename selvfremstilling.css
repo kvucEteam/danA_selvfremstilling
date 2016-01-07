@@ -17,7 +17,7 @@ h4 {
 */
 
 .row {
-	margin-left: 0px;
+	/*margin-left: 0px;*/
 }
 
 .col-xs-12, .col-md-8 {
@@ -36,17 +36,19 @@ h4 {
 .glyphicons{
 	margin-left: 14px;
 	margin-bottom: 6px;
+	margin-right: 10px;
+	vertical-align: unset;
 }
 
 
 #btnContainer{
-	margin-bottom: 10px;
-	margin-left: 15px;
+	/*margin-bottom: 10px;*/
+	/*margin-left: 15px;*/
 	clear: both;  /* Fixes the problem of flowing left of H4.instruktion */ 
 }
 
 #btnContainer .btn{
-	margin-bottom: 10px;
+	/*margin-bottom: 10px;*/
 }
 
 .DropdownContainer{
@@ -64,6 +66,12 @@ h4 {
 	margin-top: 20px;
 	font-size: 3em;
 	color: #626261;
+}
+
+.DropdownHeader{
+	margin-left: 5px;
+	position: relative;
+	bottom: 12px;
 }
 
 .hide{
@@ -123,7 +131,11 @@ select {  /*Fixes the "overflow" of the selects*/
 	height: 100%;
 }
 
+.carousel-inner{
+	background-color: #FFF;
+}
 
+/*
 #slide_0, #slide_0 .column {
 	background-color: #ACEFED;
 }
@@ -144,7 +156,7 @@ select {  /*Fixes the "overflow" of the selects*/
 	background-color: #D2D4EC;
 }
 
-
+*/
 /***************************    carousel styling   *******************************/
 
 .carousel-inner{
@@ -157,6 +169,33 @@ select {  /*Fixes the "overflow" of the selects*/
 	/*background-color: #f00;*/
 }
 
+.floatLeft{
+	float: left;
+}
+
+#comparativeAnalysis_why{
+	clear: both;  /* Pga instruksen foer dette element er floatet */
+	margin-bottom: 20px;
+}
+
+#comparativeAnalysis_why .leftColumn{
+	/*margin-left: 20px;*/
+	width: 80%;
+}
+
+
+#comparativeAnalysis_why .glyphicon, #comparativeAnalysis_why .glyphicons{
+	font-size: 3em;
+	color: #626261;
+
+	font-size: 18px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-left: 15px;
+    margin-right: 15px;
+    top: 2px;
+}
+
 #questionCarousel{
 	background-color: #f8f8f6;
 }
@@ -167,12 +206,8 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .slide{
-
-	padding-left: 40px;
-	padding-right: 40px;
-
-	/*padding-left: 6%;
-	padding-right: 6%;*/
+	/*padding-left: 40px;*/   /* Udkommenteringen her flytter pile tilbage ind over indhold */
+	/*padding-right: 40px;*/  /* Udkommenteringen her flytter pile tilbage ind over indhold */
 }
 
 .carousel{
@@ -203,8 +238,7 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .carousel-control{
-	/*width: 7%;*/
-	width: 30px;
+	/*width: 20px;*/      /* Udkommenteringen her flytter pile tilbage ind over indhold */
 }
 
 .carousel-control .glyphicon{

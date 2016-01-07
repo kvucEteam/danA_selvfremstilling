@@ -1,7 +1,7 @@
 {
     "userInterface": {
         "header": "Analyser kommunikation og selvfremstilling",
-        "subHeader": "Besvar spørgsmålene om kommunikationen i de to cases. Når du har løst opgaven får du en uddybende analyse"
+        "subHeader": "Se begge cases og besvar spørgsmålene om kommunikationen. Når du har løst opgaven får du en uddybende analyse."
     },
     "qustions": [{
             "name": "CASE 1",
@@ -405,8 +405,10 @@
         }],
     "endSenario": {
         "btnText" : "KOMPARATIV ANALYSE",
-        "header" : "Komparativ analyse",
-        "subHeader": "Læs en komparativ og uddybende analyse af de to cases",
+        "header" : "Analyser kommunikation og selvfremstilling",
+        "whyIconClass" : "glyphicon glyphicon-star",
+        "whyText" : "Til eksamen skal du kunne perspektivere og løfte din analyse op på et højere niveau. Her ser du fire eksempler på, hvordan kommunikationen i de to cases kan analyseres yderligere.",
+        "subHeader": "Læs de supplerende og uddybende analyser af de to cases.",
         "carousel": [
             {   
                 "header": "Selvfremstilling",

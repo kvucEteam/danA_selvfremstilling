@@ -73,13 +73,18 @@ function returnUserInterface(jsonData){
     var JDQ = jsonData.qustions;
     var HTML = '';
 
+    HTML += '<div id="comparativeAnalysis_why">';
+    HTML +=     '<div class="floatLeft '+jsonData.endSenario.whyIconClass+'"></div> <div class="leftColumn floatLeft">' + jsonData.endSenario.whyText + '</div>';
+    HTML +=     '<div class="clear"></div>';
+    HTML += '</div>';
+
     // Rendering buttons for the user interface:
     HTML += '<div id="btnContainer">';
     for (var n in JDQ){
-        HTML += '<span class="btnCase btn btn-'+((n==0)?"primary":"info")+'">'+JDQ[n].name+'</span>';
+        HTML += '<span id="btnCase_'+n+'" class="btnCase btn btn-lg btn-'+((n==0)?"primary":"info")+'">'+JDQ[n].name+'</span>';
     }
         // HTML += '<span class="btnEndSenario btn btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
-        HTML += '<span class="btnEndSenario btn btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
+        HTML += '<span class="btnEndSenario btn btn-lg btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
     HTML += '</div>';
     
     // Rendering the case-senarios for the usrinterface
@@ -92,10 +97,11 @@ function returnUserInterface(jsonData){
         var JDQD = JDQ[n].DropDowns;
         
             for(var k in JDQD){
-                HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-2"> ';
-                    HTML += '<div class="DropdownIcon '+JDQD[k].glyphicon+'"></div>';
+                // HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-2"> ';
+                HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-4"> ';
+                    HTML += '<span class="DropdownIcon '+JDQD[k].glyphicon+'"></span>';
                     // HTML += JDQD[k].glyphicon;
-                    HTML += '<div class="DropdownHeader">'+JDQD[k].header+'</div>';
+                    HTML += '<span class="DropdownHeader">'+JDQD[k].header+'</span>';
                     for(var q in JDQD[k].obj){
                         // HTML += '<span class="DropdownObj">'+returnDropdownMarkup( JDQD[k].obj[ JDQD[k].counter ] )+' <span class="ErrMsg"></span> </span> ';
                         HTML += '<div class="DropdownObj">'+returnDropdownMarkup( JDQD[k].obj[ q ] )+' <span class="ErrMsg"></span> </div> ';
@@ -382,7 +388,10 @@ function returnCarouselHtml(jsonData){
 
 function giveCaseFeedback(caseNum){
 
-    console.log("giveCaseFeedback - test");
+    window.lowestUnansweredCaseStr = 'UserInterface_';
+    window.lowestUnansweredCaseNum = 0;
+
+    console.log("giveCaseFeedback - caseNum: " + caseNum);
    
     if (typeof caseCount === 'undefined') {
         window.caseCount = {};
@@ -396,27 +405,45 @@ function giveCaseFeedback(caseNum){
 
         var count = 0;
         var caseStr = '';
+        var TEMP = 10000;
+        console.log("giveCaseFeedback - TEMP 1: " + TEMP);
         for (t in caseCount){  // Count the number of unanswered all questions/dropdowns
             if (!caseCount[t]){
                 ++count;
+                if (t < TEMP){
+                    TEMP = t;
+                }
             }
         }
         console.log("giveCaseFeedback - count a:" + count);
+
+        console.log("giveCaseFeedback - TEMP 2: " + TEMP);
+        
+        // THIS WORKS!!! But TLY + MAM wants the student to be send to the lowest unanswered page - which is why it is commented out.
+        // if (count > 0){
+        //     caseStr += 'CASE ';
+        //     for (var t in caseCount){
+        //         if (!caseCount[t]){ 
+        //             --count;
+        //             caseStr += String(parseInt(t)+1)+((count>=2)?', ':((count==1)?' eller ':''));
+        //         }  
+        //     }
+        // } else {
+        //     caseStr += "KOMPARATIV ANALYSE";
+        // }
+
         if (count > 0){
-            caseStr += 'CASE ';
-            for (var t in caseCount){
-                if (!caseCount[t]){ 
-                    --count;
-                    caseStr += String(parseInt(t)+1)+((count>=2)?', ':((count==1)?' eller ':''));
-                }  
-            }
+            lowestUnansweredCaseNum = ((TEMP == 10000)? 1 : TEMP);
+            caseStr += 'CASE ' + String(parseInt(lowestUnansweredCaseNum)+1);
+            lowestUnansweredCaseStr = 'UserInterface_'+String(lowestUnansweredCaseNum);
         } else {
             caseStr += "KOMPARATIV ANALYSE";
+            lowestUnansweredCaseStr = 'comparativeAnalysis';
         }
 
         var HTML = "";
         HTML += '<h3>Flot - du er færdig med case '+String(parseInt(caseNum)+1)+' </h3>';
-        HTML += '<span class="btn btn-lg btn-info GoOn">GÅ TIL '+caseStr+'</span>';
+        HTML += '<span class="btn btn-lg btn-info GoOnToNextCase">GÅ TIL '+caseStr+'</span>';
 
         UserMsgBox("body", HTML);
     }
@@ -445,6 +472,7 @@ $(document).ready(function() {
     $("#DataInput").html(returnUserInterface(jsonData)); 
 
     $("#comparativeAnalysis").addClass("hide"); // Hide the comparative analysis
+    $("#comparativeAnalysis_why").addClass("hide"); // Hide the comparative analysis
 
     console.log("jsonData: " + JSON.stringify(jsonData) );
 
@@ -494,6 +522,27 @@ $(document).ready(function() {
     });
 
 
+    $( document ).on('click', ".GoOnToNextCase", function(event){
+        console.log("GoOnToNextCase - PRESSED");
+
+        $(".btnEndSenario").removeClass("btn-primary").addClass("btn-info");    // Reset comparativeAnalysis / btnEndSenario
+        $(".btnCase").removeClass("btn-primary").addClass("btn-info");          // Reset btnCase
+
+        if (lowestUnansweredCaseStr == 'comparativeAnalysis'){  // If all cases are answered...
+            $('.UserInterface').addClass('hide');
+            $('#comparativeAnalysis').removeClass('hide');
+
+            $('.btnEndSenario').addClass("btn-primary").removeClass("btn-info");
+
+        } else {                                                // If all cases are NOT answered...
+            $('.UserInterface').addClass('hide');
+            $('#'+lowestUnansweredCaseStr).removeClass('hide');
+
+            $('#btnCase_'+lowestUnansweredCaseNum).addClass("btn-primary").removeClass("btn-info");
+        }
+    });
+
+
     $( document ).on('click', ".btnCase", function(event){
 
         $("#header").html(jsonData.userInterface.header);   // Shows the initial heading.
@@ -508,6 +557,7 @@ $(document).ready(function() {
         $(this).addClass("btn-primary").removeClass("btn-info");
 
         $("#comparativeAnalysis").addClass("hide");
+        $("#comparativeAnalysis_why").addClass("hide");
         $(".UserInterface").addClass("hide");
         $("#UserInterface_"+String(index)).removeClass("hide");
 
@@ -523,6 +573,7 @@ $(document).ready(function() {
         $(".PointFeedback").addClass("hide");
         $(".UserInterface").addClass("hide");
         $("#comparativeAnalysis").removeClass("hide"); // Unhide the comparative analysis.
+        $("#comparativeAnalysis_why").removeClass("hide"); // Unhide the comparative analysis.
         
         $(".btnCase").removeClass("btn-primary").addClass("btn-info");
         $(this).addClass("btn-primary").removeClass("btn-info");
