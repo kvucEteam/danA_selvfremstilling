@@ -224,7 +224,7 @@ function returnCarouselItem2(jsonData){
     // for (var i in slideData){
     for (var i = 0; i < slideData.length; i++) {
         // var HTML = '<div id="question_'+questionNum+'" class="item'+((questionNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
-        HTML += '<div id="slide_'+i+'" class="item'+((i==0)?' active':'')+'">';
+        HTML += '<div id="slide_'+i+'" class="'+((i==0)?' active':'')+'">';
 
         HTML += '<h3 class="columnHeading">'+slideData[i].header+'</h3>';
 
@@ -312,7 +312,7 @@ function returnCarouselItem(slideNum, slideData){
     // var itemData = jsonData.endSenario.carousel[slideNum];
 
     // var HTML = '<div id="question_'+slideNum+'" class="item'+((slideNum==0)?' active':'')+'">' + '<h2 class="indent">'+itemData.taskText+'</h2>';
-    var HTML = '<div id="question_'+slideNum+'" class="item'+((slideNum==0)?' active':'')+'">';
+    var HTML = '<div id="question_'+slideNum+'" class="question item'+((slideNum==0)?' active':'')+'">';
 
     switch(slideData[slideNum].type) {
         case "img":

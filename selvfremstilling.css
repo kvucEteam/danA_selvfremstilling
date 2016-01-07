@@ -99,14 +99,6 @@ h4 {
 	/*clear: both;*/
 }
 
-.TextHolder{
-	/*margin-bottom: 40px;*/
-	padding-bottom: 40px;
-	padding-left: 40px;
-	padding-right: 40px;
-	/*max-height: 200px;
-	overflow: auto;*/
-}
 
 select {  /*Fixes the "overflow" of the selects*/
 	width: 100%;
@@ -125,10 +117,26 @@ select {  /*Fixes the "overflow" of the selects*/
 	padding-right: 30px;
 }
 
-
-
 .item {
 	height: 100%;
+	width: 100%;
+}
+.question {
+	padding: 0 65px;
+}
+
+.columnHeading{
+	padding-left: 65px;
+	padding-top: 40px; /* 40px afstand */
+}
+
+.TextHolder{
+	/*margin-bottom: 40px;*/
+	padding-bottom: 40px;
+	padding-left: 0px;
+	padding-right: 0px;
+	/*max-height: 200px;
+	overflow: auto;*/
 }
 
 .carousel-inner{
@@ -200,11 +208,6 @@ select {  /*Fixes the "overflow" of the selects*/
 	background-color: #f8f8f6;
 }
 
-.columnHeading{
-	margin-left: 40px;
-	padding-top: 40px; /* 40px afstand */
-}
-
 .slide{
 	/*padding-left: 40px;*/   /* Udkommenteringen her flytter pile tilbage ind over indhold */
 	/*padding-right: 40px;*/  /* Udkommenteringen her flytter pile tilbage ind over indhold */
@@ -215,13 +218,24 @@ select {  /*Fixes the "overflow" of the selects*/
 	background-color: #FFF;
 }
 .carousel .carousel-indicators{
-	bottom: -5px;
+	bottom: -10px;
 }
 .carousel .carousel-indicators li{
-	border: 1px solid #000;
+	background-color: #cececc;
+	opacity: 0.7;
+	height:15px;
+	width: 15px;
+	margin-right: 5px;
+}
+.carousel .carousel-indicators li:hover {
+	opacity: 1;
 }
 .carousel .carousel-indicators .active{
 	background-color: #000;
+	opacity: 0.7;
+}
+.carousel .carousel-indicators .active:hover {
+	opacity: 1;
 }
 .carousel .left, .carousel .right{
 	background-image: none;
@@ -229,6 +243,13 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 .carousel .carousel-control{
 	opacity: 0.7;
+	text-shadow:none;
+	left:15px;
+	width:40px;
+}
+.carousel .carousel-control.right{
+	left:auto;
+	right:15px;
 }
 .carousel .carousel-control:hover{
 	opacity: 1;
@@ -242,7 +263,17 @@ select {  /*Fixes the "overflow" of the selects*/
 }
 
 .carousel-control .glyphicon{
-	font-size: 30px;
+	font-size: 20px;
+	top:50%;
+	color:white;
+	background-color: #111;
+	opacity: 0.7;
+	height:40px; 
+	width: 40px;
+	padding:5px;
+	line-height: 30px;
+	border-radius: 30px;
+	text-align: center;
+	display: block;
+	text-align: center;
 }
-
-
