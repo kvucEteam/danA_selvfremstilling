@@ -16,6 +16,14 @@ h4 {
 }
 */
 
+select{
+    text-overflow: ellipsis;
+}
+
+option {
+	
+}
+
 .row {
 	/*margin-left: 0px;*/
 }
@@ -51,6 +59,16 @@ h4 {
 	/*margin-bottom: 10px;*/
 }
 
+
+.cssEven {
+
+}
+
+.cssOdd {
+	background-color: #e7e6e2;
+}
+
+
 .DropdownContainer{
 	display: inline-block;
 	/*margin-right: 10px;*/
@@ -58,20 +76,22 @@ h4 {
 }
 
 .DropdownContainer .glyphicons{
-	font-size: 3em;
+	/*font-size: 3em;*/
+	font-size: 2.25em;
 	color: #626261;
 }
 
 .DropdownIcon{
 	margin-top: 20px;
-	font-size: 3em;
+	/*font-size: 3em;*/
+	font-size: 2.25em;
 	color: #626261;
 }
 
 .DropdownHeader{
 	margin-left: 5px;
 	position: relative;
-	bottom: 12px;
+	bottom: 9px;
 }
 
 .hide{
@@ -193,16 +213,15 @@ select {  /*Fixes the "overflow" of the selects*/
 
 
 #comparativeAnalysis_why .glyphicon, #comparativeAnalysis_why .glyphicons{
-	font-size: 3em;
-	color: #626261;
-
-	font-size: 18px;
+	color: #56bfc5;
+    font-size: 16px;
     font-weight: 600;
     line-height: 1.7;
     margin-left: 15px;
     margin-right: 15px;
     top: 2px;
 }
+
 
 #questionCarousel{
 	background-color: #f8f8f6;

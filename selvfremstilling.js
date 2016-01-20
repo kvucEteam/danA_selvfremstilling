@@ -15,7 +15,10 @@ function returnDropdownMarkup(DropdownObj){
             console.log("returnDropdownMarkup - Selected: " + Selected);
     var DOO = DropdownObj.options;
     for (n in DOO){
-        HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+((DOO[n].hasOwnProperty("class"))?' class="'+DOO[n].class+'"':"")+((n == Selected)?' disabled selected':"")+' value="'+((n == Selected)?'':DOO[n].value)+'">'+DOO[n].value+'</option>';
+        // HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+((DOO[n].hasOwnProperty("class"))?' class="'+DOO[n].class+'"':"")+((n == Selected)?' disabled selected':"")+' value="'+((n == Selected)?'':DOO[n].value)+'">'+DOO[n].value+'</option>';
+
+        HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+' class="'+((n%2 == 0)?'cssEven':'cssOdd')+' '+((DOO[n].hasOwnProperty("class"))? DOO[n].class:"")+'"'+((n == Selected)?' disabled selected':"")+' value="'+((n == Selected)?'':DOO[n].value)+'">'+DOO[n].value+'</option>';
+
         // HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+((DOO[n].hasOwnProperty("class"))?' class="'+DOO[n].class+'"':"")+' value="'+((n == Selected)?'':DOO[n].value)+'">'+DOO[n].value+'</option>';
         
         // HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+((DOO[n].hasOwnProperty("class"))?' class="'+DOO[n].class+'"':"")+' value="'+DOO[n].value+'">'+DOO[n].value+'</option>';
@@ -450,6 +453,70 @@ function giveCaseFeedback(caseNum){
 }
 
 
+function setDropDownTextWidth(targetSelector) {
+
+    console.log("setDropDownTextWidth - targetSelector.length: " + '#Dropdown_0a'.length);
+
+    // var Width = $('#Dropdown_0a').width();
+
+    // var text = $('#Dropdown_0a').text();
+    // console.log('setDropDownTextWidth - targetSelector id: ' + $('#Dropdown_0a').prop('id') + ', Width: ' + Width);
+
+    // var newText = '<span id="FirstLetter">'+text.slice(0,1)+'</span>'+text.slice(1);
+    // $('#Dropdown_0a').html(newText);  // Replace text with newText
+    // console.log('setDropDownTextWidth - newText: ' + newText);
+
+    // var letterWidth = $('#FirstLetter').width(); // Mesure the width of the first letter in px
+    // console.log('setDropDownTextWidth - letterWidth: ' + letterWidth);
+
+    // $('#Dropdown_0a').html(text);  // Replace newText with text
+
+    Width = 200;
+    letterWidth = 8;
+
+    var maxNumOfChars = Math.floor(Width/letterWidth);  // Max number of characters
+    console.log('setDropDownTextWidth - maxNumOfChars: ' + maxNumOfChars);
+    
+    
+    $( targetSelector ).each(function( index, element ) {
+
+        console.log("setDropDownTextWidth - index: " + index);
+
+        
+
+        //////////
+
+        var text = $(element).text(); 
+
+        var wordArray = text.split(" ");
+
+        var Tstr = '';
+        var str = '';
+        for (var n in wordArray){
+            Tstr += wordArray[n] + ' ';
+
+            if (n > 0) {
+                if (Tstr.length >= maxNumOfChars) {            
+                    str += wordArray[n-1] + ' <br/>';
+                    Tstr = '';
+                } else {
+                    str += wordArray[n-1] + ' ';
+                }
+            }
+        }
+
+        str += wordArray[wordArray.length-1]; // Add the last word.
+
+        console.log('setDropDownTextWidth - str: ' + str);
+
+        $(element).html(str);
+        // $(element).html(text);
+
+    });
+
+}
+
+
 //=======================================================================================
 //                  Run code
 //=======================================================================================
@@ -470,6 +537,8 @@ $(document).ready(function() {
     $('.QuestionCounter').text(QuestionCounter+' ud af '+NumOfQuestions); // Update the score counter
     
     $("#DataInput").html(returnUserInterface(jsonData)); 
+
+    // setDropDownTextWidth(".Dropdown option");   // VIRKER IKKE !!!
 
     $("#comparativeAnalysis").addClass("hide"); // Hide the comparative analysis
     $("#comparativeAnalysis_why").addClass("hide"); // Hide the comparative analysis

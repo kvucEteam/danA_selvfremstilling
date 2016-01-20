@@ -1,7 +1,7 @@
 {
     "userInterface": {
-        "header": "Analyser kommunikation og selvfremstilling",
-        "subHeader": "Se begge cases og besvar spørgsmålene om kommunikationen. Når du har løst opgaven får du en uddybende analyse."
+        "header": "Politikeres brug af videomediet",
+        "subHeader": "Se begge cases og besvar spørgsmålene om kommunikationen. Når du har løst opgaven får du supplerende perspektiveringer."
     },
     "qustions": [{
             "name": "CASE 1",
@@ -115,7 +115,7 @@
                         "posetive": "<b>Mediet</b> <p>Det rigtige svar er facebookvideo.</p>", 
                         "negative": "Det rigtige svar er en facebookvideo."
                     },{
-                        "posetive": "<b>Brugen af mediet</b> <p>Stilen er et håndholdt kamera, eventuelt en mobiltelefon, hvilket giver et hverdagslig, amatøragtigt præg.</p>", 
+                        "posetive": "<b>Brugen af mediet</b> <p>Det håndholdte kamera, eventuelt en mobiltelefon, giver stilen et hverdagsligt og uformelt præg.</p>", 
                         "negative": "Det rigtige svar er, at stilen er amatøragtigt og hverdagslig."
                     }
                 ],
@@ -135,7 +135,7 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvordan bruger Kristian Thulesen Dahl mediet?"}, 
-                        {"value": "Håndholdt – amatørisk"}, 
+                        {"value": "Håndholdt og uformelt"}, 
                         {"value": "Lækkert design ­ en dyr og professionel produktion"}, 
                         {"value": "Han har fået DR til at lave indslaget"}
                     ]
@@ -404,11 +404,11 @@
             }]
         }],
     "endSenario": {
-        "btnText" : "KOMPARATIV ANALYSE",
-        "header" : "Analyser kommunikation og selvfremstilling",
-        "whyIconClass" : "glyphicon glyphicon-star",
-        "whyText" : "Til eksamen skal du kunne perspektivere og løfte din analyse op på et højere niveau. Her ser du fire eksempler på, hvordan kommunikationen i de to cases kan analyseres yderligere.",
-        "subHeader": "Læs de supplerende og uddybende analyser af de to cases.",
+        "btnText" : "PERSPEKTIVERING",
+        "header" : "Politikeres brug af videomediet",
+        "whyIconClass" : "glyphicon glyphicon-bookmark",
+        "whyText" : "Til eksamen skal du kunne perspektivere og løfte din analyse op på et højere niveau. Her har du fire helt centrale områder som kan hjælpe dig med at se den konkrete case i en større sammenhæng, nemlig forholdet mellem kommunikation og medier i en senmoderne verden.",
+        "subHeader": "Læs de supplerende perspektiveringer af de to cases.",
         "carousel": [
             {   
                 "header": "Selvfremstilling",
