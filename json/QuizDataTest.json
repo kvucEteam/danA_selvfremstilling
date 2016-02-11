@@ -689,7 +689,7 @@
             }]
         }],
     "endSenario": {
-        "btnText" : "Komparativ analyse",
+        "btnText" : "PERSPEKTIVERING",
         "header" : "Komparativ analyse",
         "subHeader": "Instruktioner til kursisten: Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam... ",
         "carousel": [

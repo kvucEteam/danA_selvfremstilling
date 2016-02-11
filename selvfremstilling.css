@@ -1,6 +1,61 @@
-/******************************************************************************************************
-		Forneden er der nogle justeringer der får boilerplaten til at ligne MAMs design.
-******************************************************************************************************/
+/******************************************************************
+        MIDLERTIDIG generel styling (test fra objekt #1)
+******************************************************************/
+
+/*
+.Clear{
+    clear: both;
+}
+
+
+.explanation {
+    margin-bottom: 20px;
+}
+
+.explanation div:nth-child(2){
+    width: 80%;
+}
+
+.explanation > .glyphicon{
+    color: #56bfc5;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1.7;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+@media (max-width: 750px) {
+	.instruktion > .glyphicon{
+		font-size: 14px;
+	}
+}
+
+
+.instruktion {
+    width: 100%;
+    padding-left: 10px;
+}
+.instruktion div:nth-child(2){
+    width: 90%;
+}
+*/
+
+/*************************************
+        Objekt styling
+*************************************/
+
+#instruktionContainer {
+	padding: 0px;
+	margin-left: 15px;
+}
+
+
+#header{
+	margin-left: 15px;
+}
+
+
 /*
 h1 {
 	margin: 40px 0px; 
@@ -15,6 +70,7 @@ h4 {
 	line-height: 1em;
 }
 */
+
 
 select{
     text-overflow: ellipsis;
@@ -50,6 +106,7 @@ option {
 	/*margin-bottom: 10px;*/
 	/*margin-left: 15px;*/
 	clear: both;  /* Fixes the problem of flowing left of H4.instruktion */ 
+	padding-left: 15px;
 }
 
 #btnContainer .btn{
@@ -70,6 +127,7 @@ option {
 	display: inline-block;
 	/*margin-right: 10px;*/
 	padding-left: 10px;
+	margin-bottom: 10px;
 }
 
 .DropdownContainer .glyphicons{
@@ -203,6 +261,10 @@ select {  /*Fixes the "overflow" of the selects*/
 	margin-bottom: 20px;
 }
 
+.explanation{
+	margin-left: 15px;
+}
+
 #comparativeAnalysis_why .leftColumn{
 	/*margin-left: 20px;*/
 	width: 80%;
@@ -293,3 +355,31 @@ select {  /*Fixes the "overflow" of the selects*/
 	display: block;
 	text-align: center;
 }
+
+
+/********************************************************************** 
+						bootstrap dropdown 
+***********************************************************************/
+
+.Dropdown .glyphicon-chevron-down{
+	margin-left: 10px;
+}
+
+.btn-group .btn-sm {
+    margin: 0px;  
+}
+/*
+.dropdown-menu{
+	font-size: 12px;
+	line-height: 1.5;
+}
+*/
+/*
+.btn-sm {
+    margin: 15px 15px 20px 0;   <---------  
+    padding: 5px 10px;
+}
+*/
+
+
+
