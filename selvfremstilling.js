@@ -38,7 +38,7 @@ var TDropdown2 = {options:[
                     {value:"val 2"},
                     {value:"val 3"}]
                 };
-// console.log("returnDropdownMarkup: " + returnDropdownMarkup(TDropdown));
+// console.log("returnDropdownMarkup: " + returnDropdownMarkup(TDropdown)); 
 // console.log("returnDropdownMarkup: " + returnDropdownMarkup(TDropdown2));
 
 
@@ -189,7 +189,7 @@ function addCounterToJsonData(jsonData){
 }
 
 
-// IMPORTANT: 
+// IMPORTANT:    <------- THIS FUNCTION DOES NOT WORK IN INTERNET EXPLORER (BUT WORKS IN ALL OTHER BROWSWERS), AND IS THEREFORE NOT IN USE. ANOTHER AND BETTER SOLUTION TO THE PROBLEM HAS BEEN FOUND - SEE LINES 292 AND 293.
 // ==========
 // targetSelector has to be a class AND _need_ to have col-xs-XX, col-sm-XX, col-md-XX and col-lg-XX as classes - eg.:
 //
@@ -255,6 +255,7 @@ function setDropdownContainerHeight(targetSelector){
 }
 
 
+
 function returnUserInterface(jsonData){
     var JDQ = jsonData.qustions;
     var bbs =  bootstrapBreakpointSize;
@@ -286,6 +287,10 @@ function returnUserInterface(jsonData){
         HTML +=     '</div>';
         var JDQD = JDQ[n].DropDowns;
             for(var k in JDQD){
+
+                // THE FOLLOWING TWO LINES SOLVES THE PROBLEM OF .DropdownContainers NOT BEHAVING AS INTENDED WHEN STACKING.
+                HTML += ((k>0) && (k%3==0))?'<div class="clear visible-md-block visible-lg-block"></div>':'';   // This ensures that the "lg" and "md" bootstrap columns "break" at the intended places. If not there the lower "MEDIE" DropdownContainers get pushed down when "SITUATIONEN" get answered. Also the dynamic function created to set the hight of each row of DropdownContainers does not work i all versions of Internet Explorer.
+                HTML += ((k>0) && (k%2==0))?'<div class="clear visible-sm-block"></div>':'';   // This ensures that the "sm" bootstrap columns "break" at the intended places. If not there the lower "MEDIE" DropdownContainers get pushed down when "SITUATIONEN" get answered.If not there the lower "MEDIE" DropdownContainers get pushed down when "SITUATIONEN" get answered. Also the dynamic function created to set the hight of each row of DropdownContainers does not work i all versions of Internet Explorer.
                 
                 // HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-2"> ';
                 // HTML += '<div class="DropdownContainer col-xs-12 col-sm-4 col-md-4"> ';  // Gammel visning til tirsdag d. 27/1-2016
@@ -742,7 +747,8 @@ function detectBootstrapBreakpoints(){
 
 
 $(window).resize(function() {
-    setDropdownContainerHeight('.DropdownContainer');
+    // setDropdownContainerHeight('.DropdownContainer');
+
 });
 
 
@@ -751,7 +757,7 @@ detectBootstrapBreakpoints();  // This function call has to be here, due to the 
 
 $(document).ready(function() {
 
-    randomizeJsonData();
+    // randomizeJsonData();
 
     addCounterToJsonData(jsonData);
 
@@ -770,7 +776,7 @@ $(document).ready(function() {
     $("#DataInput").html(returnUserInterface(jsonData)); 
     $("#instruktionContainer").html(instruction(jsonData.userInterface.subHeader));
 
-    setDropdownContainerHeight('.DropdownContainer');
+    // setDropdownContainerHeight('.DropdownContainer');
 
     // setDropDownTextWidth(".Dropdown option");   // VIRKER IKKE !!!
 
@@ -801,8 +807,11 @@ $(document).ready(function() {
                         console.log("onChange - JDD[n].header: " + JDQD[k].header);
                         console.log("onChange - $(this).val()): " + $(this).val());
 
+                        // VERY IMPORTANT: 
+                        // ===============
+                        // The JSON data for the option-tags cannot contain interpreted HTML char like "&quot;" due to the matching of values in the if-clause below!!!
                         if (JDQD[k].obj[ q ].options[JDQD[k].correctAnswer[q]].value == $(this).val()){  // The student gave the correct answer...
-                            console.log("onChange - CORRECT ANSWER - n: " + n + ', k: ' + k + ', q: ' + q);
+                            console.log("onChange - CORRECT ANSWER - n: " + n + ', k: ' + k + ', q: ' + q );
 
                             var id = $(this).closest(".UserInterface").prop('id');
                             
@@ -836,7 +845,7 @@ $(document).ready(function() {
                                 giveCaseFeedback(n);
                             }
 
-                            setDropdownContainerHeight('.DropdownContainer');
+                            // setDropdownContainerHeight('.DropdownContainer');
 
                         } else {                    // The student gave the wrong answer...
                             console.log("onChange - WRONG ANSWER");
@@ -913,7 +922,8 @@ $(document).ready(function() {
 
             $('#btnCase_'+lowestUnansweredCaseNum).addClass("btn-primary").removeClass("btn-info");
         }
-        setDropdownContainerHeight('.DropdownContainer');
+
+        // setDropdownContainerHeight('.DropdownContainer');
     });
 
 
@@ -937,7 +947,7 @@ $(document).ready(function() {
         $(".UserInterface").addClass("hide");  // Unhide the explanation text
         $("#UserInterface_"+String(index)).removeClass("hide");
 
-        setDropdownContainerHeight('.DropdownContainer');
+        // setDropdownContainerHeight('.DropdownContainer');
     });
 
 

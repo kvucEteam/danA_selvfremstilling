@@ -104,9 +104,9 @@
                         {"value": "Hvad er formålet med kommunikationen?"}, 
                         {"value": "At invitere til et arrangement på Det Kongelige Teater"}, 
                         {"value": "At vise at Zaki Youssef og Hadi Ka-Koush har gjort karriere og begge har vundet en fornem teaterpris (Talentreumert)"}, 
-                        {"value": "Det er en politisk opsang, der kritiserer de etniske danskere for ikke at forstå &quot;perkerdansk&quot;"}, 
+                        {"value": "Det er en politisk opsang, der kritiserer de etniske danskere for ikke at forstå “perkerdansk”"}, 
                         {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},
-                        {"value": "At invitere til et arrangement på Det Kongelige Teater, og samtidig kaste et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være &quot;præmieperker&quot;"}
+                        {"value": "At invitere til et arrangement på Det Kongelige Teater, og samtidig kaste et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være “præmieperker”"}
                     ]
                 },{
                     "id": "Dropdown_2c",
@@ -179,7 +179,7 @@
                     "options": [
                         {"value": "Hvem er adressaten?"}, 
                         {"value": "Zaki Youssefs og Hadi Ha-Koushs facebookvenner"}, 
-                        {"value": "Alle Facebook-brugere, der har &quot;liket&quot; Ravage Royal”, der har venner, der har delt eller liket Ravage Royal"}, 
+                        {"value": "Alle Facebook-brugere, der har “liket” Ravage Royal”, der har venner, der har delt eller liket Ravage Royal"}, 
                         {"value": "Det Kongelige Teaters traditionelle brugere"},
                         {"value": "Unge, der er interesserede i teater"}
                     ]
@@ -191,7 +191,7 @@
                         {"value": "Hvem er modtageren(e)?"}, 
                         {"value": "Alle, der bruger google"}, 
                         {"value": "Alle, der er på facebook, og har mere end 500 venner"}, 
-                        {"value": "Alle Facebook-brugere, der har &quot;liket&quot; Ravage Royal, der har venner, der har delt eller liket Ravage Royal"}, 
+                        {"value": "Alle Facebook-brugere, der har ‘liket’ Ravage Royal, der har venner, der har delt eller liket Ravage Royal"}, 
                         {"value": "Alle, der er interesserede i Ravage Royal og sjov satire, og som kunne finde på at gå i teatret og se forestillingen"}
                     ]
                 }]
@@ -266,8 +266,8 @@
                     "options": [
                         {"value": "Hvem er afsender?"}, 
                         {"value": "Poul og Fritz"}, 
-                        {"value": "Komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet &quot;Rytteriet&quot;"}, 
-                        {"value": "Danmarks Radio og komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet &quot;Rytteriet&quot;"}, 
+                        {"value": "Komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet “Rytteriet”"}, 
+                        {"value": "Danmarks Radio og komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet “Rytteriet”"}, 
                         {"value": "Sammenslutningen af au pair-piger i Danmark"}
                     ]
                 }]

@@ -270,10 +270,10 @@
                         "posetive": "<b>Meddelsen</b> <p> Traileren vil motivere dig til at se udsendelsen om Linse og hendes datter.</p>", 
                         "negative": "Nej, det er ikke det rigtige svar. Prøv at se videoen igen ;-)."
                     },{
-                        "posetive": "<b>Formålet</b> <p>Formålet er at reklamere for programmet og skabe opmærksomhed om Linse.</p>", 
+                        "posetive": "<b>Formålet</b> <p>Formået er netop at reklamere for programmet og skabe opmærksomhed om Linse.</p>", 
                         "negative": "Nej, det er ikke det rigtige svar. Prøv igen :-)"
                     },{
-                        "posetive": "<b>Sprog</b> <p>Linses sprog er præget af slang og bandeord.</p>", 
+                        "posetive": "<b>Sprog</b> <p>Især Linses sprog er præget af slang og bandeord.</p>", 
                         "negative": "Svaret er ikke det mest præcise. Prøv om der er en anden svarmulighed, som rammer sproget bedre."
                     }
                 ],
