@@ -757,7 +757,7 @@ detectBootstrapBreakpoints();  // This function call has to be here, due to the 
 
 $(document).ready(function() {
 
-    // randomizeJsonData();
+    randomizeJsonData();
 
     addCounterToJsonData(jsonData);
 
