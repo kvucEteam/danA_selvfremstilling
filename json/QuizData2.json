@@ -16,7 +16,7 @@
                 "correctAnswer": [2],
                 "feedback": [
                     {
-                        "posetive": "<b>Situationen</b><p><b>Nemlig!</b> Ravage Royal reklamer for deres arrangement i skuespilhuset samtidig med, at de giver en smagsprøve på deres satire.</p>", 
+                        "posetive": "<b>Situationen</b><p>Ravage Royal reklamer for deres arrangement i skuespilhuset samtidig med, at de giver en smagsprøve på deres satire.</p>", 
                         "negative": "<b>Ikke korrekt!</b> Ravage Royal reklamer for deres arrangement i skuespilhuset samtidig med, at de giver en smagsprøve på deres satire."
                     }
                 ],
@@ -39,7 +39,7 @@
                 "correctAnswer": [2,3],
                 "feedback": [
                     {
-                        "posetive": "<b>Afsender</b> <p> Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater.</p>", 
+                        "posetive": "<b>Afsender</b> <p>Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater.</p>", 
                         "negative": "Forkert! Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater."
                     },{
                         "posetive": "<b>Afsenderroller</b> <p>Zaki Youssef og Hadi Ka-Koushtal optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter og bruger disse skift til at skabe en humoristisk effekt.</p>", 
@@ -329,10 +329,10 @@
                 "correctAnswer": [3,1],
                 "feedback": [
                     {
-                        "posetive": "<b>Mediet</b> <p> Ja, det er nemlig tv-satire.</p>", 
+                        "posetive": "<b>Mediet</b> <p>Det er tv-satire.</p>", 
                         "negative": "Nej, det er ikke rigtigt."
                     },{
-                        "posetive": "<b>Brugen af mediet</b> <p>ja, der er arbejdet med et bevidst samlet filmisk udsagn, hvor de forskellige dele er tilpasset hinanden.</p>", 
+                        "posetive": "<b>Brugen af mediet</b> <p>Der er arbejdet med et bevidst samlet filmisk udsagn, hvor de forskellige dele er tilpasset hinanden.</p>", 
                         "negative": "Nej, det er ikke tilfældet."
                     }
                 ],
