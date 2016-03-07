@@ -75,13 +75,13 @@
                 "correctAnswer": [4,5,3],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p> Rigtigt! Videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde. </p>", 
+                        "posetive": "<b>Meddelsen</b> <p> Videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde. </p>", 
                         "negative": "Delvist rigtigt, men det er mere dækkende at sige, at videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde."
                     },{
-                        "posetive": "<b>Formålet</b> <p> Rigtigt! Det er det mest udfoldede svar, at videoen inviterer til et arrangement på Det Kongelige Teater, som samtidig kaster et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være &quot;præmieperker&quot;</p>", 
+                        "posetive": "<b>Formålet</b> <p> Det er det mest udfoldede svar, at videoen inviterer til et arrangement på Det Kongelige Teater, som samtidig kaster et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være &quot;præmieperker&quot;</p>", 
                         "negative": "Delvist rigtigt, men det er mere dækkende at sige, at videoen inviterer til et arrangement på Det Kongelige Teater, som samtidig kaster et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være &quot;præmieperker&quot;"
                     },{
-                        "posetive": "<b>Sprog</b> <p> Rigtigt! Zaki Youssef og Hadi Ka-Koush veksler mellem forskellige etnolekter og dialekter og bruger sproget til at skabe en humoristisk effekt </p>", 
+                        "posetive": "<b>Sprog</b> <p> Zaki Youssef og Hadi Ka-Koush veksler mellem forskellige etnolekter og dialekter og bruger sproget til at skabe en humoristisk effekt </p>", 
                         "negative": "Ikke helt rigtigt! Zaki Youssef og Hadi Ka-Koush veksler mellem forskellige etnolekter og dialekter og bruger sproget til at skabe en humoristisk effekt"
                     }
                 ],
@@ -105,8 +105,8 @@
                         {"value": "At invitere til et arrangement på Det Kongelige Teater"}, 
                         {"value": "At vise at Zaki Youssef og Hadi Ka-Koush har gjort karriere og begge har vundet en fornem teaterpris (Talentreumert)"}, 
                         {"value": "Det er en politisk opsang, der kritiserer de etniske danskere for ikke at forstå “perkerdansk”"}, 
-                        {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},
-                        {"value": "At invitere til et arrangement på Det Kongelige Teater, og samtidig kaste et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være “præmieperker”"}
+                        {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},x
+                        {"value": "At reklamere for et arrangement og iscenesætte sprog og identitet på en humoristisk og kritisk måde."}
                     ]
                 },{
                     "id": "Dropdown_2c",
