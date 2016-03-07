@@ -355,10 +355,10 @@
                 "correctAnswer": [2, 4],
                 "feedback": [
                     {
-                        "posetive": "<b>Adressat</b> <p>Svaret er rigtigt. De unge er TV3’s primære målgruppe.</p>", 
+                        "posetive": "<b>Adressat</b> <p>De unge er TV3’s primære målgruppe.</p>", 
                         "negative": "Svaret er ikke rigtigt. Prøv igen!"
                     }, {
-                        "posetive": "<b>Modtager</b> <p>Dette svar er rigtigt. Der er en snæver sammenhæng mellem adressat og modtager, for TV3 ved hvem deres seere er - nemlig de unge - og målretter derfor deres programmer til denne gruppe.</p>", 
+                        "posetive": "<b>Modtager</b> <p>Der er en snæver sammenhæng mellem adressat og modtager, for TV3 ved hvem deres seere er - nemlig de unge - og målretter derfor deres programmer til denne gruppe.</p>", 
                         "negative": "Nej, det er ikke rigtigt. Prøv igen!"
                     }
                 ],

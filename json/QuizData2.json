@@ -39,7 +39,7 @@
                 "correctAnswer": [2,3],
                 "feedback": [
                     {
-                        "posetive": "<b>Afsender</b> <p>Rigtigt! Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater.</p>", 
+                        "posetive": "<b>Afsender</b> <p> Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater.</p>", 
                         "negative": "Forkert! Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater."
                     },{
                         "posetive": "<b>Afsenderroller</b> <p>Zaki Youssef og Hadi Ka-Koushtal optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter og bruger disse skift til at skabe en humoristisk effekt.</p>", 
@@ -105,7 +105,7 @@
                         {"value": "At invitere til et arrangement på Det Kongelige Teater"}, 
                         {"value": "At vise at Zaki Youssef og Hadi Ka-Koush har gjort karriere og begge har vundet en fornem teaterpris (Talentreumert)"}, 
                         {"value": "Det er en politisk opsang, der kritiserer de etniske danskere for ikke at forstå “perkerdansk”"}, 
-                        {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},x
+                        {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},
                         {"value": "At reklamere for et arrangement og iscenesætte sprog og identitet på en humoristisk og kritisk måde."}
                     ]
                 },{
@@ -127,10 +127,10 @@
                 "correctAnswer": [1,5],
                 "feedback": [
                     {
-                        "posetive": "<b>Mediet</b> <p>Rigtigt, videoen er lagt op som en facebook-opdatering.</p>", 
+                        "posetive": "<b>Mediet</b> <p>Videoen er lagt op som en facebook-opdatering.</p>", 
                         "negative": "Forkert. Videoen er lagt op som en facebook-opdatering."
                     },{
-                        "posetive": "<b>Brugen af mediet</b> <p>Rigtigt. Det er en veltilrettelagt og professionelt produceret video, som bevidst iscenesætter en spontan samtalesituation.</p>", 
+                        "posetive": "<b>Brugen af mediet</b> <p> Det er en veltilrettelagt og professionelt produceret video, som bevidst iscenesætter en spontan samtalesituation.</p>", 
                         "negative": "Forkert. Det er en veltilrettelagt og professionelt produceret video, som bevidst iscenesætter en spontan samtalesituation."
                     }
                 ],
@@ -165,10 +165,10 @@
                 "correctAnswer": [2, 4],
                 "feedback": [
                     {
-                        "posetive": "<b>Adressat</b> <p>Rigtigt. De, der kan se videoen, har &quot;liket&quot; Ravage Royal eller har venner, der har delt eller liket Ravage Royal.</p>", 
+                        "posetive": "<b>Adressat</b> <p> De, der kan se videoen, har &quot;liket&quot; Ravage Royal eller har venner, der har delt eller liket Ravage Royal.</p>", 
                         "negative": "Ikke rigtigt! De, der kan se videoen, har &quot;liket&quot; Ravage Royal eller har venner, der har delt eller liket Ravage Royal."
                     }, {
-                        "posetive": "<b>Modtager</b> <p>Rigtigt! Hensigten med meddelelsen er at få interesserede til at gå ind at se teaterforestillingen, så derfor er det alle, som kunne finde på at se forestillingen, der er modtagere.</p>", 
+                        "posetive": "<b>Modtager</b> <p> Hensigten med meddelelsen er at få interesserede til at gå ind at se teaterforestillingen, så derfor er det alle, som kunne finde på at se forestillingen, der er modtagere.</p>", 
                         "negative": "Forkert! Hensigten med meddelelsen er at få interesserede i til at gå ind at se teaterforestillingen, så derfor er det alle, som kunne finde på at se forestillingen, der er modtagere."
                     }
                 ],
@@ -202,7 +202,7 @@
                 "correctAnswer": [3],
                 "feedback": [
                     {
-                        "posetive": "<b>Effekten</b> <p>Rigtigt! Og da meddelelsen er delt på via Facebook, er der en god chance for at modtageren kan lide humoren. Og en del vil sikkert ende med at købe en billet.</p>", 
+                        "posetive": "<b>Effekten</b> <p> Og da meddelelsen er delt på via Facebook, er der en god chance for at modtageren kan lide humoren. Og en del vil sikkert ende med at købe en billet.</p>", 
                         "negative": "Forkert! Om kommunikationen lykkes afhænger i høj grad af, om modtageren falder for humoren i videoen. Da meddelelsen er delt på via Facebook, er der dog en god chance for at modtageren kan lide humoren. Og en del vil sikkert ende med at købe en billet."
                     }
                 ],
@@ -255,7 +255,7 @@
                 "correctAnswer": [3],
                 "feedback": [
                     {
-                        "posetive": "<b>Afsender</b> <p>Ja, det rigtigt. Selvom det umiddelbart er komikerne, der skaber satiren og dens indhold, så spiller Danmarks Radio også en rolle, som den tv-station, der stiller deres sendeflade til rådighed og  sikrer programmets økonomiske ramme.</p>", 
+                        "posetive": "<b>Afsender</b> <p>Selvom det umiddelbart er komikerne, der skaber satiren og dens indhold, så spiller Danmarks Radio også en rolle, som den tv-station, der stiller deres sendeflade til rådighed og  sikrer programmets økonomiske ramme.</p>", 
                         "negative": "Ikke helt rigtigt. Det er et mere dækkende svar."
                     }
                 ],
@@ -278,10 +278,10 @@
                 "correctAnswer": [4, 4, 3],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p>a, det er rigtigt. Den umiddelbare meddelelse er, at man skal tage sig sammen og bare nyde livet som Fritz og Poul. MEN som det er typisk for satire er meddelelsen dobbelt. Den indirekte meddelelse er, at figurerne Poul og Fritz er lykkeligt blinde for verdens problemer.</p>", 
+                        "posetive": "<b>Meddelsen</b> <p>Den umiddelbare meddelelse er, at man skal tage sig sammen og bare nyde livet som Fritz og Poul. MEN som det er typisk for satire er meddelelsen dobbelt. Den indirekte meddelelse er, at figurerne Poul og Fritz er lykkeligt blinde for verdens problemer.</p>", 
                         "negative": "Nej, her er du ikke helt rigtigt på den."
                     },{
-                        "posetive": "<b>Formål</b> <p>ja,netop. Det groteske ved Poul og Frits’ udtalelser understreges ved den hårdtarbejdende au-pair-pige på gulvet ved siden af dem.</p>", 
+                        "posetive": "<b>Formål</b> <p>Det groteske ved Poul og Frits’ udtalelser understreges ved den hårdtarbejdende au-pair-pige på gulvet ved siden af dem.</p>", 
                         "negative": "Nej, her er du ikke helt rigtig på den."
                     },{
                         "posetive": "<b>Sprog</b> <p> Satiren udstiller de to figurer netop ved deres sprogs særlige tonefald.</p>", 
@@ -364,10 +364,10 @@
                 "correctAnswer": [5, 2],
                 "feedback": [
                     {
-                        "posetive": "<b>Adressat</b> <p>Ja, det er rigtigt. Satireprogrammet har været sendt på kanal DR2 og det er med denne kanals seere for øje, at programmet har været sendt.</p>", 
+                        "posetive": "<b>Adressat</b> <p>Satireprogrammet har været sendt på kanal DR2 og det er med denne kanals seere for øje, at programmet har været sendt.</p>", 
                         "negative": "Nej, ikke helt rigtigt. Der er et mere dækkende svar."
                     },{
-                        "posetive": "<b>Modtager</b> <p>Ja, rigtigt. Da det har primært været DR2’s seere, der har været modtagerne.</p>", 
+                        "posetive": "<b>Modtager</b> <p>Da det har primært været DR2’s seere, der har været modtagerne.</p>", 
                         "negative": "Ikke helt rigtigt. Der er et mere præcist svar."
                     }
                 ],
@@ -403,7 +403,7 @@
                 "correctAnswer": [1],
                 "feedback": [
                     {
-                        "posetive": "<b>Effekten</b> <p>Ja, det er rigtigt. Programmets udprægede succes vidner om, at komikerne er lykkedes med deres satiriske kommunikation.</p>", 
+                        "posetive": "<b>Effekten</b> <p>Programmets udprægede succes vidner om, at komikerne er lykkedes med deres satiriske kommunikation.</p>", 
                         "negative": "Nej, det er ikke helt rigtigt."
                     }
                 ],
