@@ -23,6 +23,7 @@ function returnDropdownMarkup(DropdownObj){
         
         // HTML += '<option'+((DOO[n].hasOwnProperty("id"))?' id="'+DOO[n].id+'"':"")+((DOO[n].hasOwnProperty("class"))?' class="'+DOO[n].class+'"':"")+' value="'+DOO[n].value+'">'+DOO[n].value+'</option>';
     };
+    HTML += '<optgroup label=""></optgroup>'; // <--- BUGFIX for turncated text on IOS7 - see: http://stackoverflow.com/questions/19398154/how-to-fix-truncated-text-on-select-element-on-ios7   
     HTML += "</select>";
     return HTML;
 }
@@ -274,8 +275,8 @@ function returnUserInterface(jsonData){
     for (var n in JDQ){
         HTML += '<span id="btnCase_'+n+'" class="btnCase btn btn-lg btn-'+((n==0)?"primary":"info")+'">'+JDQ[n].name+'</span>';
     }
-        HTML += '<span class="btnEndSenario btn btn-lg btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
-        // HTML += '<span class="btnEndSenario btn btn-lg btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
+        // HTML += '<span class="btnEndSenario btn btn-lg btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
+        HTML += '<span class="btnEndSenario btn btn-lg btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
     HTML += '</div>';
 
     
@@ -858,6 +859,14 @@ $(document).ready(function() {
                 }
             }
         }
+
+        // $( document ).on('change', '#header', function() {  // <-----  DETTE ER ER TEST SOM SKAL SLETTETS!!!
+        //     var HeaderLen = $('#header').text().length;
+        //     console.log('TEST - HeaderLen: ' + HeaderLen);
+        //     if (HeaderLen < 10) {
+        //         alert('TEST - HeaderLen: ' + HeaderLen);
+        //     }
+        // })
     });
 
     // BOOTSTRAP DROPDOWN - Check of student answers:
@@ -981,11 +990,68 @@ $(document).ready(function() {
         console.log("RIGHT - PRESSED");
     });
 
+    // DETTE ER EN IKKE-FÆRDIGTUDVIKLET DYNAMISK ÆNDRING AF BOOTSTRAP UL-DROPDOWN MENUEN - SE TO-DO-LISTEN PUNKT 1 TIL 5 FORNEDEN:
+    // $( document ).on('click', '.dropdown-toggle', function() {
+    //     var extraMargin = 30;
+    //     var bodyWidth = $('body').width();
+    //     console.log('dropdown-toggle - bodyWidth: ' + bodyWidth);
+    //     var dropdownWidth = $(this).next().width();  // this = .dropdown-toggle, this.next = ul.dropdown-menu
+    //     console.log('dropdown-toggle - dropdownWidth: ' + dropdownWidth);
+    //     var offset = $(this).offset();
+    //     console.log('dropdown-toggle - offset.left: : ' + offset.left + ', offset.top: ' + offset.top);
+
+    //     var lengthLeft = bodyWidth - dropdownWidth - offset.left + extraMargin;
+    //     if (lengthLeft < 0){  // If width of ul.dropdown-menu (dropdownWidth) + offset.left > bodyWidth + extraMargin, then take action...
+    //         console.log('dropdown-toggle - A1');
+    //         var ulObj = $(this).next();
+    //         lengthLeft = bodyWidth - dropdownWidth + extraMargin;
+    //         if (lengthLeft >= 0) {  // lengthLeft has to be larger than zero or the text in ul.dropdown-menu is simply too long...
+    //             console.log('dropdown-toggle - A2');
+    //             $(ulObj).css({'position': 'relative', 'left': lengthLeft});
+    //         } else { // The text in ul.dropdown-menu is too long - solution: place some line breaks inside the text...
+    //             console.log('dropdown-toggle - A3');
+    //             $( 'li a', ulObj ).each(function( index, element ) { 
+    //                 if ($(element).find('.LengthSpan').length == 0){
+    //                     console.log('dropdown-toggle - A4');
+    //                     var HTML = '<span class="LengthSpan">'+$(element).text()+'</span>';
+    //                     console.log('dropdown-toggle - HTML: ' + HTML);
+    //                     $(element).html(HTML);
+    //                 }
+    //                 var eleLength = $('.LengthSpan', element).width();
+    //                 var txtLength = $('.LengthSpan', element).text().length;
+                    
+    //                 console.log('dropdown-toggle - eleLength: ' + eleLength + ', txtLength: ' + txtLength);
+
+    //                 if (eleLength + 2*extraMargin >= dropdownWidth){
+    //                     console.log('dropdown-toggle - A5');
+                        
+    //                     // TO-DO'S FØR FUNKTIONALITETEN ER FÆRDIGT:
+    //                     // ----------------------------------------
+    //                     // 1. Find alle mellemrum mellem ord og IKKE tags!
+    //                     // 2. Find et passende mellemrum mht tekst længde
+    //                     // 3. placer et <br> tag i dette mellemrum
+    //                     // 4. giv evt alle '.LengthSpan' med <br> tags en kortere linjehøjde, så man kan se at teksten er opdelt i to eller flere linjer.
+    //                     // 5. I tilfælde af at kursisten skifter skærm størrelse på mobile, så fjern alle '.LengthSpan' og <br> (giv evt <br> en klasse)
+
+    //                     var HTML = $('.LengthSpan', element).html();
+    //                     $(element).html(HTML);
+    //                 }
+    //             });
+    //         }
+    //     }
+
+    // });
 
     /////////////////////////    TEST    /////////////////////////
 
 
     // $("#DataInput").append(returnBsDropdownMarkup(TDropdown));
+
+    // $( window ).unload(function() {
+    //     $('body').append('<div>x</div>');
+    //     alert('test');
+    //     location.href = "http://stackoverflow.com";
+    // });
     
 
 });

@@ -232,7 +232,7 @@
                 "header": "AFSENDER",
                 "icon":{"alt": "Sproget", "url": ""},
                 "glyphicon": "glyphicon glyphicon-user",
-                "correctAnswer": [1],
+                "correctAnswer": [5],
                 "feedback": [
                     {
                         "posetive": "<b>Afsender</b> <p>Afsenderen er politikeren Mogens Jensen.</p>", 
