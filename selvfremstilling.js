@@ -160,6 +160,39 @@ function randomizeJsonData(){
 }
 
 
+function printJsonData(){  // This function is only meant for proof reading the JSON-data.
+    var HTML = '<div id="PrintData">';
+    console.log("printJsonData - jsonData 1: " + JSON.stringify(jsonData));
+    for (var i in jsonData.qustions){
+        console.log("printJsonData - name: " + jsonData.qustions[i].name);
+        for (var j in jsonData.qustions[i].DropDowns){
+            console.log("printJsonData - header: " + jsonData.qustions[i].DropDowns[j].header);
+            HTML += '<div class="HeaderContainer">';
+            HTML += '<b>'+jsonData.qustions[i].DropDowns[j].header+'</b><br>';
+            for (var k in jsonData.qustions[i].DropDowns[j].correctAnswer){
+                var correctAnswerNum = jsonData.qustions[i].DropDowns[j].correctAnswer[k];      // Contains the "correct answer number"
+                var optionsArray = jsonData.qustions[i].DropDowns[j].obj[k].options;   // All options in the array except the zero'th element (which is the question to the student).
+                console.log("printJsonData - AA correctAnswerNum: " + correctAnswerNum + ", optionsArray: " + JSON.stringify(optionsArray));
+
+                HTML += '<div class="OptionContainer">';
+                for (var n in optionsArray) {
+                    HTML += '<div class="Option">'+((n>0)?'&nbsp;&nbsp;&nbsp;&nbsp;':'')+optionsArray[n].value+'</div>';
+                }
+                HTML += '</div>';
+                HTML += '<div class="FeedbackContainer">'; 
+                    HTML += '<div class="FeedbackPosetive">RIGTIGT: '+jsonData.qustions[i].DropDowns[j].feedback[k].posetive.split('<p>')[1].replace('</p>','')+'</div>';
+                    HTML += '<div class="FeedbackNegative">FORKERT: '+jsonData.qustions[i].DropDowns[j].feedback[k].negative+'</div>';
+                HTML += '</div><br>';
+            }
+            HTML += '</div><br>'; 
+        }
+    }
+    HTML += '</div>';
+    // console.log("printJsonData - printJsonData: " + JSON.stringify(jsonData));
+    return HTML;
+}
+
+
 
 function ReturnAjaxData(Type, Url, Async, DataType) {
     $.ajax({
@@ -758,6 +791,8 @@ detectBootstrapBreakpoints();  // This function call has to be here, due to the 
 
 $(document).ready(function() {
 
+    // $('body').append(printJsonData());  // This prints out the jsonData related to the data of the dropdownmenus. This is only for proof reading purposes.
+
     randomizeJsonData();
 
     addCounterToJsonData(jsonData);
@@ -990,57 +1025,63 @@ $(document).ready(function() {
         console.log("RIGHT - PRESSED");
     });
 
+    // REGEX der IKKE finder mellemrum inde i tags:  ( )(?![^<]*>|[^<>]*<\/)
+    // SE: http://stackoverflow.com/questions/18621568/regex-replace-text-outside-html-tags
+
     // DETTE ER EN IKKE-FÆRDIGTUDVIKLET DYNAMISK ÆNDRING AF BOOTSTRAP UL-DROPDOWN MENUEN - SE TO-DO-LISTEN PUNKT 1 TIL 5 FORNEDEN:
-    // $( document ).on('click', '.dropdown-toggle', function() {
-    //     var extraMargin = 30;
-    //     var bodyWidth = $('body').width();
-    //     console.log('dropdown-toggle - bodyWidth: ' + bodyWidth);
-    //     var dropdownWidth = $(this).next().width();  // this = .dropdown-toggle, this.next = ul.dropdown-menu
-    //     console.log('dropdown-toggle - dropdownWidth: ' + dropdownWidth);
-    //     var offset = $(this).offset();
-    //     console.log('dropdown-toggle - offset.left: : ' + offset.left + ', offset.top: ' + offset.top);
+    $( document ).on('click', '.dropdown-toggle', function() {
+        var extraMargin = 30;
+        var bodyWidth = $('body').width();
+        console.log('dropdown-toggle - bodyWidth: ' + bodyWidth);
+        var dropdownWidth = $(this).next().width();  // this = .dropdown-toggle, this.next = ul.dropdown-menu
+        console.log('dropdown-toggle - dropdownWidth: ' + dropdownWidth);
+        var offset = $(this).offset();
+        console.log('dropdown-toggle - offset.left: : ' + offset.left + ', offset.top: ' + offset.top);
 
-    //     var lengthLeft = bodyWidth - dropdownWidth - offset.left + extraMargin;
-    //     if (lengthLeft < 0){  // If width of ul.dropdown-menu (dropdownWidth) + offset.left > bodyWidth + extraMargin, then take action...
-    //         console.log('dropdown-toggle - A1');
-    //         var ulObj = $(this).next();
-    //         lengthLeft = bodyWidth - dropdownWidth + extraMargin;
-    //         if (lengthLeft >= 0) {  // lengthLeft has to be larger than zero or the text in ul.dropdown-menu is simply too long...
-    //             console.log('dropdown-toggle - A2');
-    //             $(ulObj).css({'position': 'relative', 'left': lengthLeft});
-    //         } else { // The text in ul.dropdown-menu is too long - solution: place some line breaks inside the text...
-    //             console.log('dropdown-toggle - A3');
-    //             $( 'li a', ulObj ).each(function( index, element ) { 
-    //                 if ($(element).find('.LengthSpan').length == 0){
-    //                     console.log('dropdown-toggle - A4');
-    //                     var HTML = '<span class="LengthSpan">'+$(element).text()+'</span>';
-    //                     console.log('dropdown-toggle - HTML: ' + HTML);
-    //                     $(element).html(HTML);
-    //                 }
-    //                 var eleLength = $('.LengthSpan', element).width();
-    //                 var txtLength = $('.LengthSpan', element).text().length;
+        var lengthLeft = bodyWidth - dropdownWidth - offset.left + extraMargin;
+        if (lengthLeft < 0){  // If width of ul.dropdown-menu (dropdownWidth) + offset.left > bodyWidth + extraMargin, then take action...
+            console.log('dropdown-toggle - A1');
+            var ulObj = $(this).next();
+            lengthLeft = bodyWidth - dropdownWidth + extraMargin;
+            if (lengthLeft >= 0) {  // lengthLeft has to be larger than zero or the text in ul.dropdown-menu is simply too long...
+                console.log('dropdown-toggle - A2');
+                $(ulObj).css({'position': 'relative', 'left': lengthLeft});
+            } else { // The text in ul.dropdown-menu is too long - solution: place some line breaks inside the text...
+                console.log('dropdown-toggle - A3');
+                $( 'li a', ulObj ).each(function( index, element ) { 
+                    if ($(element).find('.LengthSpan').length == 0){
+                        console.log('dropdown-toggle - A4');
+                        var HTML = '<span class="LengthSpan">'+$(element).html()+'</span>';
+                        console.log('dropdown-toggle - HTML: ' + HTML);
+                        $(element).html(HTML);
+                    }
+                    var eleLength = $('.LengthSpan', element).width();
+                    var txtLength = $('.LengthSpan', element).text().length;
                     
-    //                 console.log('dropdown-toggle - eleLength: ' + eleLength + ', txtLength: ' + txtLength);
+                    console.log('dropdown-toggle - eleLength: ' + eleLength + ', txtLength: ' + txtLength);
 
-    //                 if (eleLength + 2*extraMargin >= dropdownWidth){
-    //                     console.log('dropdown-toggle - A5');
+                    if (eleLength + 2*extraMargin >= dropdownWidth){
+                        console.log('dropdown-toggle - A5');
+
+                        var matchArray = $('.LengthSpan', element).text().match(/( )(?![^<]*>|[^<>]*<\/)/g); 
+                        console.log("LatexCoeffToHtml - matchArray: " + matchArray);
                         
-    //                     // TO-DO'S FØR FUNKTIONALITETEN ER FÆRDIGT:
-    //                     // ----------------------------------------
-    //                     // 1. Find alle mellemrum mellem ord og IKKE tags!
-    //                     // 2. Find et passende mellemrum mht tekst længde
-    //                     // 3. placer et <br> tag i dette mellemrum
-    //                     // 4. giv evt alle '.LengthSpan' med <br> tags en kortere linjehøjde, så man kan se at teksten er opdelt i to eller flere linjer.
-    //                     // 5. I tilfælde af at kursisten skifter skærm størrelse på mobile, så fjern alle '.LengthSpan' og <br> (giv evt <br> en klasse)
+                        // TO-DO'S FØR FUNKTIONALITETEN ER FÆRDIGT:
+                        // ----------------------------------------
+                        // 1. Find alle mellemrum mellem ord og IKKE tags!
+                        // 2. Find et passende mellemrum mht tekst længde
+                        // 3. placer et <br> tag i dette mellemrum
+                        // 4. giv evt alle '.LengthSpan' med <br> tags en kortere linjehøjde, så man kan se at teksten er opdelt i to eller flere linjer.
+                        // 5. I tilfælde af at kursisten skifter skærm størrelse på mobile, så fjern alle '.LengthSpan' og <br> (giv evt <br> en klasse)
 
-    //                     var HTML = $('.LengthSpan', element).html();
-    //                     $(element).html(HTML);
-    //                 }
-    //             });
-    //         }
-    //     }
+                        var HTML = $('.LengthSpan', element).html();
+                        $(element).html(HTML);
+                    }
+                });
+            }
+        }
 
-    // });
+    });
 
     /////////////////////////    TEST    /////////////////////////
 
