@@ -62,7 +62,7 @@
                 "correctAnswer": [4, 1, 5],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p> Spiseforstyrrelser er meget sundhedsskadelige og skal tages alvorligt.</p>", 
+                        "posetive": "<b>Meddelelsen</b> <p> Spiseforstyrrelser er meget sundhedsskadelige og skal tages alvorligt.</p>", 
                         "negative": "Nej, det er ikke det rigtige svar. Prøv igen."
                     },{
                         "posetive": "<b>Formål</b> <p> Formålet er at udbrede viden om unge og spiseforstyrrelser.</p>", 
@@ -267,10 +267,10 @@
                 "correctAnswer": [2,1,2],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p> Traileren vil motivere dig til at se udsendelsen om Linse og hendes datter.</p>", 
+                        "posetive": "<b>Meddelelsen</b> <p> Traileren vil motivere dig til at se udsendelsen om Linse og hendes datter.</p>", 
                         "negative": "Nej, det er ikke det rigtige svar. Prøv at se videoen igen ;-)."
                     },{
-                        "posetive": "<b>Formålet</b> <p>Formået er netop at reklamere for programmet og skabe opmærksomhed om Linse.</p>", 
+                        "posetive": "<b>Formålet</b> <p>Formålet er netop at reklamere for programmet og skabe opmærksomhed om Linse.</p>", 
                         "negative": "Nej, det er ikke det rigtige svar. Prøv igen :-)"
                     },{
                         "posetive": "<b>Sprog</b> <p>Især Linses sprog er præget af slang og bandeord.</p>", 
@@ -282,7 +282,7 @@
                     "class": "Dropdown",
                     "selected": "0",
                     "options": [
-                        {"value": "Hvad er meddelsen?"}, 
+                        {"value": "Hvad er meddelelsen?"}, 
                         {"value": "Vær glad for din krop!"}, 
                         {"value": "Linse er en spændende  kvinde, der er underholdende at lytte til og se på"}, 
                         {"value": "Mor og datter kan have et super forhold til hinanden"}, 
@@ -370,7 +370,7 @@
                         {"value": "Hvem er adressaten?"}, 
                         {"value": "Alle danskere"}, 
                         {"value": "Unge"}, 
-                        {"value": "Kvinder med brystproblemer"},
+                        {"value": "Kvinder med bryst problemer"},
                         {"value": "Mænd der gerne vil se bare bryster"}
                     ]
                 }, {

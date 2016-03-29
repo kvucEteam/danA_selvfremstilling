@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Selvfremstilling</title>
+    <!-- http://www.robotstxt.org/meta.html -->
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../library/css/styles.css" type="text/css" />
+    <link rel="stylesheet" href="glyphicons.css" type="text/css" />
+    <link rel="stylesheet" href="selvfremstilling.css" type="text/css" />
+    <link rel="icon" type="image/svg+xml" href="http://www.w3.org/html/logo/downloads/HTML5_Badge.svg">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta http-equiv="Cache-control" content="public"> -->
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+<!-- 
+        <div class="row">
+            <h1 id="header"> ... </h1>
+            <h4 class="instruktion"><span class="glyphicon glyphicon-arrow-right"></span><span id="subHeader"> ... </span></h4>
+        </div>
+ -->
+
+        <div class="row">
+            <h1 id="header"> ... </h1>
+            <div id="instruktionContainer" class="col-xs-12 col-sm-12 col-md-8">
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="DataInput"></div>
+<!--         
+            <div class="score_container">
+                <span class="scoreText">Korrekte svar: </span>
+                <span class="QuestionCounter QuestionTask"> ... </span>  
+                <span class="scoreText"> Fejl: </span>
+                <span class="ErrorCount QuestionTask">0</span>  
+            </div>
+  -->           
+        </div>
+    </div>
+
+
+    <script src="../library/vendor_scripts.js"></script>
+    <script src="../library/custom_scripts.js"></script>
+    <script src="selvfremstillingTest.js"></script>
+    <script type="text/javascript">
+        // ReturnAjaxData("GET", "json/QuizDataTest.json", false, "json");        // En eller flere dropdown pr kollonne
+        // ReturnAjaxData("GET", "json/QuizDataTest2.json", false, "json");        // En eller flere dropdown pr kollonne
+        ReturnAjaxData("GET", "json/QuizData.json", false, "json");        // TEST: En eller flere dropdown pr kollonne
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        one_line_footer();
+    });
+    </script>
+    <script type="text/javascript">
+        window.onbeforeunload = function (evt) {
+            // var message = 'Are you sure you want to leave?';
+            // if (typeof evt == 'undefined') {
+            //     evt = window.event;
+            // }
+            // if (evt) {
+            //     evt.returnValue = message;
+            // }
+            // return message;
+
+            
+            // location.reload(); 
+
+            // window.location.replace(window.location.href+"&f=2");
+
+            window.location.href = "www.google.com";
+
+            // window.location.href
+        }
+    </script>
+</body>
+
+</html>

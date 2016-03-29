@@ -75,7 +75,7 @@
                 "correctAnswer": [4,5,3],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p> Videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde. </p>", 
+                        "posetive": "<b>meddelelsen</b> <p> Videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde. </p>", 
                         "negative": "Delvist rigtigt, men det er mere dækkende at sige, at videoen lægger op til en underholdende aften, der samtidig tør italesætte stereotyper på en satirisk måde."
                     },{
                         "posetive": "<b>Formålet</b> <p> Det er det mest udfoldede svar, at videoen inviterer til et arrangement på Det Kongelige Teater, som samtidig kaster et humoristisk og kritisk blik på de sproglige koder, som knytter sig til Det Kongelige Teater og til det at være &quot;præmieperker&quot;</p>", 
@@ -90,7 +90,7 @@
                     "class": "Dropdown",
                     "selected": "0",
                     "options": [
-                        {"value": "Hvad er meddelsen?"}, 
+                        {"value": "Hvad er meddelelsen?"}, 
                         {"value": "En kritisk iscenesættelse af de diskursive magtstrukturer i teaterverdenen."}, 
                         {"value": "Kom i Det Kongelige Teater, det bliver sjovt"}, 
                         {"value": "Etniske minoriteter bliver undertrykt og diskrimineret"}, 
@@ -278,7 +278,7 @@
                 "correctAnswer": [4, 4, 3],
                 "feedback": [
                     {
-                        "posetive": "<b>Meddelsen</b> <p>Den umiddelbare meddelelse er, at man skal tage sig sammen og bare nyde livet som Fritz og Poul. MEN som det er typisk for satire er meddelelsen dobbelt. Den indirekte meddelelse er, at figurerne Poul og Fritz er lykkeligt blinde for verdens problemer.</p>", 
+                        "posetive": "<b>meddelelsen</b> <p>Den umiddelbare meddelelse er, at man skal tage sig sammen og bare nyde livet som Fritz og Poul. MEN som det er typisk for satire er meddelelsen dobbelt. Den indirekte meddelelse er, at figurerne Poul og Fritz er lykkeligt blinde for verdens problemer.</p>", 
                         "negative": "Nej, her er du ikke helt rigtigt på den."
                     },{
                         "posetive": "<b>Formål</b> <p>Det groteske ved Poul og Frits’ udtalelser understreges ved den hårdtarbejdende au-pair-pige på gulvet ved siden af dem.</p>", 
