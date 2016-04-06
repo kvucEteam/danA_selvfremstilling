@@ -176,13 +176,14 @@ function printJsonData(){  // This function is only meant for proof reading the 
 
                 HTML += '<div class="OptionContainer">';
                 for (var n in optionsArray) {
-                    HTML += '<div class="Option">'+((n>0)?'&nbsp;&nbsp;&nbsp;&nbsp;':'')+optionsArray[n].value+'</div>';
+                    // HTML += '<div class="Option">'+((n>0)?'&nbsp;&nbsp;&nbsp;&nbsp;':'')+optionsArray[n].value+'</div>';
+                    HTML += '<div class="Option">'+((n>0)?'&nbsp;&nbsp;&nbsp;&nbsp;':'')+optionsArray[n].value+' ('+optionsArray[n].value.length+') </div>';
                 }
                 HTML += '</div>';
-                HTML += '<div class="FeedbackContainer">'; 
-                    HTML += '<div class="FeedbackPosetive">RIGTIGT: '+jsonData.qustions[i].DropDowns[j].feedback[k].posetive.split('<p>')[1].replace('</p>','')+'</div>';
-                    HTML += '<div class="FeedbackNegative">FORKERT: '+jsonData.qustions[i].DropDowns[j].feedback[k].negative+'</div>';
-                HTML += '</div><br>';
+                // HTML += '<div class="FeedbackContainer">'; 
+                //     HTML += '<div class="FeedbackPosetive">RIGTIGT: '+jsonData.qustions[i].DropDowns[j].feedback[k].posetive.split('<p>')[1].replace('</p>','')+'</div>';
+                //     HTML += '<div class="FeedbackNegative">FORKERT: '+jsonData.qustions[i].DropDowns[j].feedback[k].negative+'</div>';
+                // HTML += '</div><br>';
             }
             HTML += '</div><br>'; 
         }
@@ -308,8 +309,8 @@ function returnUserInterface(jsonData){
     for (var n in JDQ){
         HTML += '<span id="btnCase_'+n+'" class="btnCase btn btn-lg btn-'+((n==0)?"primary":"info")+'">'+JDQ[n].name+'</span>';
     }
-        HTML += '<span class="btnEndSenario btn btn-lg btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
-        // HTML += '<span class="btnEndSenario btn btn-lg btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
+        // HTML += '<span class="btnEndSenario btn btn-lg btn-info hide">'+jsonData.endSenario.btnText+'</span>';  // Den rigtige - AKTIVER!!! 18/12-2015
+        HTML += '<span class="btnEndSenario btn btn-lg btn-info">'+jsonData.endSenario.btnText+'</span>';     // TEST MED TLY  18/12-2015
     HTML += '</div>';
 
     

@@ -382,4 +382,16 @@ select {  /*Fixes the "overflow" of the selects*/
 */
 
 
+/******************   Media queries   ********************/
+
+@media (max-width: 496px) {  /* 506px fits as "breakpoint" (e.g. btnEndSenario goes under the two btnCase btns) with Firefox and Chrome but not Safari */
+	.btnCase {
+		margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    .btnEndSenario {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+}
 
