@@ -42,8 +42,8 @@
                         "posetive": "<b>Afsender</b> <p>Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater.</p>", 
                         "negative": "Forkert! Da hensigten er at reklamere for et konkret arrangement i Det Kongelige Teater, er afsenderen entertainergruppen Ravage Royal og Det Kongelige Teater."
                     },{
-                        "posetive": "<b>Afsenderroller</b> <p>Zaki Youssef og Hadi Ka-Koushtal optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter og bruger disse skift til at skabe en humoristisk effekt.</p>", 
-                        "negative": "Det er ikke helt forkert, men der er en mere dækkende valgmulighed, nemlig at Zaki Youssef og Hadi Ka-Koushtal optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter."
+                        "posetive": "<b>Afsenderroller</b> <p>Zaki Youssef og Hadi Ka-Koush optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter og bruger disse skift til at skabe en humoristisk effekt.</p>", 
+                        "negative": "Det er ikke helt forkert, men der er en mere dækkende valgmulighed, nemlig at Zaki Youssef og Hadi Ka-Koush optræder som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter."
                     }
                 ],
                 "obj": [{
@@ -63,9 +63,9 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvordan er afsenderrollerne?"}, 
-                        {"value": "Zaki Youssef og Hadi Ka-Koushtal som privatpersoner"}, 
-                        {"value": "Zaki Youssef og Hadi Ka-Koushtal som danskere med en etnisk minoritetsbaggrund"}, 
-                        {"value": "Zaki Youssef og Hadi Ka-Koushtal som komikere, der skifter mellem etnisk ‘neutrale’ afsenderpositioner og roller som etnisk minoriteter"}
+                        {"value": "Zaki Youssef og Hadi Ka-Koush som privatpersoner"}, 
+                        {"value": "Zaki Youssef og Hadi Ka-Koush som danskere med en etnisk minoritetsbaggrund"}, 
+                        {"value": "Afsenderne er komikere, der skifter positioner mellem etnisk 'neutral' og etnisk minoritet"}
                     ]
                 }]
             }, {
@@ -91,10 +91,10 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvad er meddelelsen?"}, 
-                        {"value": "En kritisk iscenesættelse af de diskursive magtstrukturer i teaterverdenen."}, 
+                        {"value": "En kritisk iscenesættelse af de diskursive magtstrukturer i teaterverdenen"}, 
                         {"value": "Kom i Det Kongelige Teater, det bliver sjovt"}, 
                         {"value": "Etniske minoriteter bliver undertrykt og diskrimineret"}, 
-                        {"value": "Kom i Det Kongelige Teater, det bliver sjovt og du bliver samtidig udfordret på dine holdninger"}
+                        {"value": "Kom i Det Kongelige Teater, det bliver sjovt, og du vil blive udfordret på dine holdninger"}
                     ]
                 },{
                     "id": "Dropdown_2b",
@@ -103,10 +103,10 @@
                     "options": [
                         {"value": "Hvad er formålet med kommunikationen?"}, 
                         {"value": "At invitere til et arrangement på Det Kongelige Teater"}, 
-                        {"value": "At vise at Zaki Youssef og Hadi Ka-Koush har gjort karriere og begge har vundet en fornem teaterpris (Talentreumert)"}, 
-                        {"value": "Det er en politisk opsang, der kritiserer de etniske danskere for ikke at forstå “perkerdansk”"}, 
+                        {"value": "At vise at komikerne har gjort karriere og begge har vundet en fornem teaterpris"}, 
+                        {"value": "Det er en politisk opsang, der kritiserer etniske danskere for ikke at forstå “perkerdansk”"}, 
                         {"value": "At gøre grin med Det Kongelige Teater, som en gammel og støvet kulturinstitution"},
-                        {"value": "At reklamere for et arrangement og iscenesætte sprog og identitet på en humoristisk og kritisk måde."}
+                        {"value": "At gøre reklame og iscenesætte sprog og identitet på en humoristisk og kritisk måde"}
                     ]
                 },{
                     "id": "Dropdown_2c",
@@ -115,8 +115,8 @@
                     "options": [
                         {"value": "Hvilket sprog?"}, 
                         {"value": "Zaki Youssef og Hadi Ka-Koush taler rigsdansk på videoen"}, 
-                        {"value": "Zaki Youssef og Hadi Ka-Koush taler københavnsk på videoen, men dialekten spiller ikke nogen særlig rolle"}, 
-                        {"value": "Zaki Youssef og Hadi Ka-Koush veksler mellem forskellige etnolekter og dialekter og bruger sproget til at skabe en humoristisk effekt"},
+                        {"value": "Der tales københavnsk på videoen, men dialekten spiller ikke nogen særlig rolle"}, 
+                        {"value": "Der veksles mellem forskellige etnolekter og dialekter, og sproget bruges humoristisk"},
                         {"value": "Zaki Youssef og Hadi Ka-Koush taler perkerdansk og det lyder sjovt"}
                     ]
                 }]
@@ -155,7 +155,7 @@
                         {"value": "Det er en hurtig optagelse med en iphone, der skal give klippet et autentisk præg"}, 
                         {"value": "Det er et fraklip, der er blevet lagt op for sjov"},
                         {"value": "Det er et klip fra et interview i TV-avisen"},
-                        {"value": "Det er en veltilrettelagt og professionelt produceret video, som bevidst iscenesætter en spontan samtalesituation"}
+                        {"value": "Det er en veltilrettelagt video, som bevidst iscenesætter en spontan samtalesituation"}
                     ]
                 }]
             }, {
@@ -179,7 +179,7 @@
                     "options": [
                         {"value": "Hvem er adressaten?"}, 
                         {"value": "Zaki Youssefs og Hadi Ha-Koushs facebookvenner"}, 
-                        {"value": "Alle Facebook-brugere, der har “liket” Ravage Royal”, der har venner, der har delt eller liket Ravage Royal"}, 
+                        {"value": "Alle brugere, der “liker” eller deler Ravage Royal på Facebook"}, 
                         {"value": "Det Kongelige Teaters traditionelle brugere"},
                         {"value": "Unge, der er interesserede i teater"}
                     ]
@@ -191,8 +191,8 @@
                         {"value": "Hvem er modtageren(e)?"}, 
                         {"value": "Alle, der bruger google"}, 
                         {"value": "Alle, der er på facebook, og har mere end 500 venner"}, 
-                        {"value": "Alle Facebook-brugere, der har ‘liket’ Ravage Royal, der har venner, der har delt eller liket Ravage Royal"}, 
-                        {"value": "Alle, der er interesserede i Ravage Royal og sjov satire, og som kunne finde på at gå i teatret og se forestillingen"}
+                        {"value": "Alle brugere, der “liker” eller deler Ravage Royal på Facebook"}, 
+                        {"value": "Alle, der er interesserede i Ravage Royal og satire, og måske vil ind og se forestillingen"}
                     ]
                 }]
             }, {
@@ -214,10 +214,8 @@
                         {"value": "Lykkedes Zaki Youssef og Hadi Ka-Koush med kommunikationen?"}, 
                         {"value": "Nej, der er for få smileys"}, 
                         {"value": "Nej, man forstår ikke, hvorfor de skal ændre deres måde at tale på. Det er da mærkeligt"},
-                        {"value": "Ja, det kommer dog an på om modtageren falder for deres humor og deres stil, og om det giver ham eller hende lyst til at se mere og købe en billet til showet"},
-                        {"value": "Ja, mange nydanskere vil synes at det er sjovt og tage ind at se stykket"},
-                        {"value": "0 . . . . 10 . . . .20 . . . .30 . . . .40 . . . .50 . . . .60 . . . .70 . . . .80 . . . .90 . . . .100 . . . 110 . . . 120 . . . 130 . . . 140 . . . 150"}
-                    ]
+                        {"value": "Ja, hvis modtageren falder for deres humor og får lyst til at købe en billet til showet"},
+                        {"value": "Ja, mange nydanskere vil synes at det er sjovt og tage ind at se stykket"}                    ]
                 }]
             }]
         }, {
@@ -244,7 +242,7 @@
                     "options": [
                         {"value": "Hvad er situationen?"}, 
                         {"value": "Et filmklip, hvor to almindelige danskere sidder og snakker om ting, de har hørt"}, 
-                        {"value": "En bevidst tilrettelagt humoristisk scene, der gør grin med de to mænd, deres sprog og deres menneskesyn"}, 
+                        {"value": "En bevidst tilrettelagt humoristisk scene, der gør grin med de to mænds sprog og menneskesyn"}, 
                         {"value": "Optakten til en pornografisk film"}, 
                         {"value": "Klip fra en dokumentarudsendelse om livet i Gentofte"}
                     ]
@@ -268,7 +266,7 @@
                         {"value": "Hvem er afsender?"}, 
                         {"value": "Poul og Fritz"}, 
                         {"value": "Komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet “Rytteriet”"}, 
-                        {"value": "Danmarks Radio og komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet “Rytteriet”"}, 
+                        {"value": "DR og komikerne Rasmus Botoft og Martin Buch, der står bag satireprogrammet “Rytteriet”"}, 
                         {"value": "Sammenslutningen af au pair-piger i Danmark"}
                     ]
                 }]
@@ -309,7 +307,7 @@
                         {"value": "At vise, at det gælder om at leve glad og ubekymret, som Fritz og Poul gør det"}, 
                         {"value": "At vise fordelene ved at have en au pair-pige i huset"}, 
                         {"value": "At italesætte det vigtige problem omkring nedslidning på det danske arbejdsmarked"}, 
-                        {"value": "At udstille Poul og Fritz, som selvfede og afstumpede typer, der ikke har indsigt i og empati med det samfund, det er en del af"}, 
+                        {"value": "At udstille Poul og Fritz, som selvfede og afstumpede typer, uden empati med andre"}, 
                         {"value": "At kæmpe for au pair-pigers rettigheder"}
                     ]
                 },{
@@ -320,7 +318,7 @@
                         {"value": "Hvilket sprog?"}, 
                         {"value": "Fritz og Poul taler rigsdansk"}, 
                         {"value": "Fritz og Poul taler jysk"}, 
-                        {"value": "Fritz og Poul taler en særlig sociolekt, der viser, at de tilhører overklassen og bor et sted langs Strandvejen i nordsjælland"}
+                        {"value": "De taler en sociolekt, der viser, at de er overklasse og bor ved Strandvejen i nordsjælland"}
                     ]
                 }]
             }, {
@@ -414,7 +412,7 @@
                     "selected": "0",
                     "options": [
                         {"value": "Lykkedes Rasmus Botoft og Martin Buch  med kommunikationen?"}, 
-                        {"value": "Rigtig godt, satireprogrammet har haft stor succes, og spejler nogle usympatiske træk ved den dansk selvtilstrækkelighed, som tilsyneladende er både væsentlige og aktuelle at debattere"}, 
+                        {"value": "ja, de har succes, og viser med humor usympatiske træk ved den danske selvtilstrækkelighed"}, 
                         {"value": "Nej, figurerne Fritz og Poul er urealistiske og utroværdige"}
                     ]
                 }]

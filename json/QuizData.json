@@ -27,7 +27,7 @@
                     "options": [
                         {"value": "Hvad er situationen?"}, 
                         {"value": "Kristian Thulesen Dahl er til frisøren"}, 
-                        {"value": "Dansk Folkepartis formand bruger pausen fra partiets sommergruppemøde på et besøg hos frisøren"}, 
+                        {"value": "Dansk Folkepartis formand bruger pausen fra DF’s sommergruppemøde hos frisøren"}, 
                         {"value": "En valgvideo i forbindelse med folketingsvalg"}, 
                         {"value": "Privatoptagelser fra Kristian Thulesen Dahls privatliv"}, 
                         {"value": "En videopræsentation af Dansk Folkepartis politiske mærkesager"}
@@ -279,7 +279,7 @@
                         {"value": "Mogens Jensen er fordrukken og har ikke styr på sin geografi"}, 
                         {"value": "Mogens Jensen er en sjov politiker"}, 
                         {"value": "Mogens Jensen har i sit politiske virke søgt at forbinde det lokale med det globale"}, 
-                        {"value": "Man skal stemme på Mogens Jensen, da han værner om det vestjyske og kæmper mod globaliseringen"}
+                        {"value": "Stem på Mogens Jensen. Han værner om det vestjyske og kæmper mod globaliseringen"}
                     ]
                 },{
                     "id": "Dropdown_8b",
@@ -287,7 +287,7 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvad er formålet med kommunikationen?"}, 
-                        {"value": "At overbevise særligt vestjyske vælgere om, at Mogens Jensen varetager deres interesser i en global tidsalder"}, 
+                        {"value": "At overbevise især vestjyske vælgere om, at Mogens Jensen varetager deres interesser"}, 
                         {"value": "At stille Mogens Jensen i et uheldigt lys"}, 
                         {"value": "At gøre grin med udlandets blik på Danmark"}, 
                         {"value": "At vise politikeren som en stålfast og målrettet type"}, 
@@ -335,10 +335,10 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvordan bruger Mogens Jensen mediet?"}, 
-                        {"value": "Mogens Jensen bruger humor til at vise, at han er den rigtige til at skabe bro mellem det lokale og det globale"}, 
+                        {"value": "Humor bruges til at vise, at han er den rette til at skabe bro mellem lokalt og globalt"}, 
                         {"value": "Mogens Jensen bruger videoen til at iscenesætte sig selv som en actionhelt"}, 
                         {"value": "Mogens Jensen bruger videomediet til særligt at nå unge vælgere"}, 
-                        {"value": "Mogens Jensen bruger mediet til at vise, hvor vanskelig kommunikationen kan være, når man er ude og rejse som politiker"}
+                        {"value": "Mediet bruges til at vise, hvor svær kommunikationen kan være, når man rejser som politiker"}
                     ]
                 }]
             }, {
@@ -397,8 +397,8 @@
                     "selected": "0",
                     "options": [
                         {"value": "Lykkes Mogens Jensen med kommunikationen?"}, 
-                        {"value": "Ja, den underspillede humor passer til den vestjyske (og danske) selvforståelse, og videoens høje kvalitet vidner om at Mogens Jensen samtidig er dybt professionel"}, 
-                        {"value": "Nej, vestjyder har ingen humoristisk sans, og videoens høje kvalitet vidner om frås med skatteborgernes penge"}
+                        {"value": "Ja, humoren passer til den vestjyske selvforståelse, og videoen viser ham som professionel"}, 
+                        {"value": "Nej, vestjyder har ingen humor, og videoen vidner om frås med skatteborgernes penge"}
                     ]
                 }]
             }]

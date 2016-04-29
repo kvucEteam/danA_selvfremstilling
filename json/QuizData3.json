@@ -139,8 +139,8 @@
                     "options": [
                         {"value": "Hvordan bruger Psykiatrifonden mediet?"}, 
                         {"value": "Psykiatrifonden bruger mediet til at iscenesætte de to unge piger"}, 
-                        {"value": "Psykiatrifonden bruger interviews, baggrundsmusik og klipning til at vise de samfundsmæssige konsekvenser ved spiseforstyrrelser"}, 
-                        {"value": "Elektronisk musik, interviews og hverdagsscener bruges til at komme tæt på den unges egen verden og appellere til den unge seer"}, 
+                        {"value": "Der bruges interviews, musik og klipning til at vise konsekvenserne ved spiseforstyrrelser"}, 
+                        {"value": "Musik, interviews og hverdagsscener bruges til at komme tæt på den unges egen verden"}, 
                         {"value": "Psykiatrifonden bruger mediet på en meget tør og teoritung måde"}
                     ]
                 }]
@@ -342,9 +342,9 @@
                     "selected": "0",
                     "options": [
                         {"value": "Hvordan bruges mediet?"}, 
-                        {"value": "Gennem håndholdt kamera og ved at veksle mellem interview og hverdagsscener, der går tæt på Linse og hendes datter, får publikum en oplevelse af autenticitet."}, 
+                        {"value": "Håndholdt kamera, interview og hverdagsscener giver seeren en oplevelse af autenticitet"}, 
                         {"value": "Der arbejdes med lange kritiske og pågående interviews"}, 
-                        {"value": "Der arbejdes med et roligt fortælletempo og der bruges poetiske virkemidler, der viser hvordan Linse og hendes datter oplever et fællesskab"},
+                        {"value": "Der bruges poetiske virkemidler, der viser hvordan mor og datter oplever et fællesskab"},
                         {"value": "TV3 bruger mediet til at kritisere moderens brug af datteren"}
                     ]
                 }]
